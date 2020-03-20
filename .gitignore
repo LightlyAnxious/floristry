@@ -1,0 +1,17 @@
+.DS_Store
+.idea
+.vscode
+*.ai
+*.log
+*.pdf
+*.psd
+*.sublime*
+.eslintignore
+.eslintrc
+.stylelintrc
+layouts/
+source/img/opt
+build/img/opt
+node_modules/
+npm-debug.*
+Thumbs.db
