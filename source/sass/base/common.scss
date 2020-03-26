@@ -1,0 +1,61 @@
+body {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  min-width: 250px;
+
+  font-family: "Forum", "Garamond", serif;
+  font-weight: 400;
+  color: #ffffff;
+
+  background-color: $brown;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+
+  background: $brown;
+
+  transition: all .5s;
+
+  &.open {
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+}

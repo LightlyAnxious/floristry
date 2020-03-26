@@ -1,0 +1,166 @@
+// * Menu
+.menu {
+  display: flex;
+  justify-content: space-between;
+
+  width: 90%;
+  max-width: 1730px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 95px 1%;
+}
+
+.menu__logo {
+  width: 158px;
+  height: 49px;
+  margin-bottom: 174px;
+
+  &[href]:hover .menu__image {
+    stroke: $blue;
+    fill: $blue;
+    animation: draw 1.5s ease-in-out;
+  }
+
+  &[href]:active .menu__image {
+    stroke: $blue;
+    fill: $blue;
+    fill-opacity: 0.5;
+    stroke-opacity: 0.5;
+    animation: draw 1.5s ease-in-out;
+  }
+}
+
+.menu__image {
+  width: 158px;
+  height: 49px;
+
+  fill: none;
+  stroke: #ffffff;
+
+  color: #ffffff;
+
+  transition: all 0.25s;
+}
+
+.menu__social-links {
+  align-self: flex-start;
+
+  margin-top: 663px;
+  width: 34px;
+}
+
+.menu__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & ul {
+    @include list-reset;
+
+    width: 450px;
+  }
+
+  & li {
+    @include press;
+
+    margin-bottom: 80px;
+
+    text-align: center;
+
+    cursor: pointer;
+  }
+}
+
+.menu__link {
+  font-size: 35px;
+  line-height: 39px;
+  text-align: center;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+
+  opacity: 0.5;
+
+  transition: all .25s;
+
+  &:hover {
+    color: $green;
+    text-align: center;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+
+    opacity: 1;
+  }
+}
+
+.menu__btn {
+  @include button-reset;
+
+  position: relative;
+
+  width: 28px;
+  height: 28px;
+  margin: 12px 2px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+
+    width: 39px;
+    height: 2px;
+
+    background-color: #ffffff;
+
+    transform-origin: center;
+    transform: rotate(45deg) translate(4px, 11px);
+
+    transition: all 0.25s;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+
+    width: 39px;
+    height: 2px;
+
+    background-color: #ffffff;
+
+    transform-origin: center;
+    transform: rotate(-45deg) translate(-11px, 4px);
+
+    transition: all 0.25s;
+  }
+
+  &:hover {
+    &::before {
+      background-color: $green;
+
+      transform: rotate(45deg) translate(4px, 11px) scale(1.03);
+    }
+    &::after {
+      background-color: $green;
+
+      transform: rotate(-45deg) translate(-11px, 4px) scale(1.03);
+    }
+  }
+
+  &:active {
+    &::before {
+      background-color: darken($color: $green, $amount: 30%);
+
+      transform: rotate(45deg) translate(4px, 11px) scale(.98);
+    }
+
+    &::after {
+      background-color: darken($color: $green, $amount: 30%);
+
+      transform: rotate(-45deg) translate(-11px, 4px) scale(.98);
+    }
+  }
+}

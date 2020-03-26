@@ -1,0 +1,87 @@
+.campaigns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  padding-left: 43px;
+  margin: 85px auto 139px auto;
+
+  width: 100%;
+  max-width: 353px;
+  padding: 5.98%;
+
+  &.lazy-bg-loaded {
+      background-image: url("../img/campaigns-bg.jpg");
+      background-image: image-set(url("../img/campaigns-bg.webp")1x);
+      background-position: 100% 50%;
+      background-size: 697px 410px;
+      background-repeat: no-repeat;
+
+      @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+          background-image: url("../img/campaigns-bg-2x.jpg");
+          background-image: image-set(url("../img/campaigns-bg-2x.webp")2x);
+          background-position: 100% 50%;
+          background-size: 697px 410px;
+          background-repeat: no-repeat;
+      }
+  }
+
+  & h2 {
+    position: relative;
+
+    width: 220px;
+    margin: 65px auto 20px 0;
+
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 170%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: -15px;
+      left: 0;
+
+      width: 85px;
+      border: 2px solid #ffffff;
+    }
+  }
+
+  & p {
+    width: 100%;
+    margin: 20px auto 45px 0;
+
+    font-size: 14px;
+    line-height: 170%;
+  }
+
+  & a {
+    padding: 16px 30px;
+    margin: 0 auto 65px 0;
+
+    font-size: 11px;
+    line-height: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    background-color: #000000;
+  }
+}
+
+.campigns__wrapper {
+  align-items: flex-start;
+  flex-direction: column;
+
+  width: 25.25%;
+  padding-left: 6.15%;
+  box-sizing: border-box;
+}
+
+.bg-div.lazy-bg-loaded {
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/cards/card-1.jpg");
+}
