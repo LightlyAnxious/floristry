@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Весна Всегда</title>
+		<link rel="stylesheet preload" href="css/style.min.css" as="style">
+		<link rel="preload" href="fonts/forum-v10-cyrillic-regular.woff2" as="font" crossorigin="anonymous">
+		<link rel="preload" href="fonts/forum-v10-cyrillic-regular.woff" as="font" crossorigin="anonymous">
+		<script defer src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" crossorigin="anonymous"></script>
+		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/svgxuse/1.2.6/svgxuse.min.js"></script>
+	</head>
+	<body>
+		<header class="page-header lazy-bg-loaded">
+			<div class="page-header__wrapper page-header__wrapper--top"><a class="page-header__logo">
+					<svg class="page-header__image">
+						<use xlink:href="img/sprite_auto.svg#logo"></use>
+					</svg></a>
+				<div class="overlay">
+					<nav class="menu">
+						<div class="menu__social-links social-links">
+							<ul>
+								<li><a class="social-links__link social-links__link--insta" href="#">
+										<svg width="26" height="26">
+											<use xlink:href="img/sprite_auto.svg#icon-insta"></use>
+										</svg></a></li>
+								<li><a class="social-links__link social-links__link--fb" href="#">
+										<svg width="26" height="26">
+											<use xlink:href="img/sprite_auto.svg#icon-fb"></use>
+										</svg></a></li>
+								<li><a class="social-links__link social-links__link--whatsapp" href="#">
+										<svg width="26" height="26">
+											<use xlink:href="img/sprite_auto.svg#icon-whatsapp"></use>
+										</svg></a></li>
+								<li><a class="social-links__link social-links__link--vk" href="#">
+										<svg width="26" height="26">
+											<use xlink:href="img/sprite_auto.svg#icon-vk"></use>
+										</svg></a></li>
+							</ul>
+						</div>
+						<div class="menu__container"><a class="menu__logo">
+								<svg class="menu__image">
+									<use xlink:href="img/sprite_auto.svg#logo-menu"></use>
+								</svg></a>
+							<ul>
+								<li><a class="menu__link" href="#">Свадебная флористика</a></li>
+								<li><a class="menu__link" href="#">Букеты на любые мероприятия</a></li>
+								<li><a class="menu__link" href="#">Композиции</a></li>
+								<li><a class="menu__link" href="#">Оформление мероприятий</a></li>
+							</ul>
+						</div>
+						<button class="menu__btn"><span class="visually-hidden">закрыть меню</span></button>
+					</nav>
+				</div>
+				<button class="page-header__btn">Меню</button>
+			</div>
+			<div class="page-header__wrapper page-header__wrapper--bottom">
+				<div class="page-header__social-links social-links">
+					<ul>
+						<li><a class="social-links__link social-links__link--insta" href="#">
+								<svg width="26" height="26">
+									<use xlink:href="img/sprite_auto.svg#icon-insta"></use>
+								</svg></a></li>
+						<li><a class="social-links__link social-links__link--fb" href="#">
+								<svg width="26" height="26">
+									<use xlink:href="img/sprite_auto.svg#icon-fb"></use>
+								</svg></a></li>
+						<li><a class="social-links__link social-links__link--whatsapp" href="#">
+								<svg width="26" height="26">
+									<use xlink:href="img/sprite_auto.svg#icon-whatsapp"></use>
+								</svg></a></li>
+						<li><a class="social-links__link social-links__link--vk" href="#">
+								<svg width="26" height="26">
+									<use xlink:href="img/sprite_auto.svg#icon-vk"></use>
+								</svg></a></li>
+					</ul>
+				</div>
+				<div class="page-header__promo">
+					<h1 class="visually-hidden">Весна всегда - цветы, аксессуары, настроение</h1><strong>Флористика с душой</strong><a href="gallery.html">Смотреть работы</a>
+				</div><a class="page-header__scroll"><span>cмотреть каталог</span></a>
+			</div>
+		</header>
+		<main></main>
+		<section class="services">
+			<p>Каталог услуг</p>
+			<div class="services__list">
+				<h2>Каталог услуг</h2>
+				<ul>
+					<li><a class="lazy-bg services__link services__link--bride" href="#"><span>01</span>
+							<p>букет невесты и свадебное оформление</p><strong class="services__button">Смотреть работы</strong></a></li>
+					<li><a class="lazy-bg services__link services__link--celebration" href="#"><span>02</span>
+							<p>букеты на торжества</p><strong class="services__button">Смотреть работы</strong></a></li>
+					<li><a class="lazy-bg services__link services__link--compositions" href="#"><span>03</span>
+							<p>композиции</p><strong class="services__button">Смотреть работы</strong></a></li>
+					<li><a class="lazy-bg services__link services__link--decor" href="#"><span>04</span>
+							<p>оформление мероприятий</p><strong class="services__button">Смотреть работы</strong></a></li>
+				</ul>
+			</div>
+		</section>
+		<section class="campaigns">
+			<div class="campaigns__wrapper">
+				<h2>Акционные предложения</h2>
+				<p>При заказе свадебного оформления предоставляется скидка на букет невесты и бутоньерку в размере 30%</p><a>заказать оформление</a>
+						<picture>
+							<source media="(min-width: 1199px)" type="image/webp" srcset="img/campaigns-bg.webp 1x, img/undefined@2x.webp 2x">
+							<source media="(min-width: 767px)" type="image/webp" srcset="img/campaigns-bg-tablet.webp 1x, img/undefined@2x.webp 2x">
+							<source type="image/webp" srcset="img/campaigns-bg-mobile.webp 1x, img/undefined@2x.webp 2x">
+							<source media="(min-width: 1199px)" srcset="img/campaigns-bg.jpg 1x, img/undefined@2x.jpg 2x">
+							<source media="(min-width: 767px)" srcset="img/campaigns-bg-tablet.jpg 1x, img/undefined@2x.jpg 2x"><img class="yall-loaded campaigns__image" src="img/campaigns-bg-mobile.jpg" srcset="img/undefined@2x.jpg 2x" alt="Оформление мероприятий">
+						</picture>
+			</div>
+		</section>
+		<script src="js/vendor.js" defer></script>
+		<script src="js/main.js" defer></script>
+	</body>
+</html>

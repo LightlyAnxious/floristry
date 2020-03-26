@@ -1,0 +1,231 @@
+.services {
+  display: grid;
+  justify-items: center;
+
+  width: 100%;
+  max-width: 1730px;
+  margin: 0 auto;
+
+  & p {
+    grid-column: 1;
+    grid-row: 1;
+
+    margin: 184px 0 0;
+
+    font-size: 11.6vw;
+    line-height: 243px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    opacity: 0.03;
+  }
+}
+
+.services__list {
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 2;
+
+  width: 86.7%;
+  margin-bottom: 85px;
+
+  text-align: center;
+
+  & h2 {
+    margin: 170px 0 120px;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  & p {
+    font-size: 16px;
+    line-height: 170%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    opacity: 0.9;
+  }
+
+  & ul {
+    @include list-reset;
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  & li {
+    @include press;
+    position: relative;
+
+    width: 22%;
+    height: 450px;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+.services__link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  height: 100%;
+
+  text-decoration: none;
+
+  transition: all .25s;
+
+  &--bride.lazy-bg-loaded {
+    background-image: url("../img/feature-1.jpg");
+    background-image: image-set(url("../img/feature-1.webp")1x);
+
+    @media (min-resolution: $retina-dpi),
+    (min-resolution: $retina-dppx) {
+      background-image: url("../img/feature-1@2x.jpg");
+      background-image: image-set(url("../img/feature-1-2x.webp")2x);
+    }
+  }
+
+  &--celebration.lazy-bg-loaded {
+      background-image: url("../img/feature-2.jpg");
+      background-image: image-set(url("../img/feature-2.webp")1x);
+
+      @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+          background-image: url("../img/feature-2@2x.jpg");
+          background-image: image-set(url("../img/feature-2-2x.webp")2x);
+      }
+  }
+
+  &--compositions.lazy-bg-loaded {
+      background-image: url("../img/feature-3.jpg");
+      background-image: image-set(url("../img/feature-3.webp")1x);
+
+      @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+          background-image: url("../img/feature-3@2x.jpg");
+          background-image: image-set(url("../img/feature-3-2x.webp")2x);
+      }
+  }
+
+  &--decor.lazy-bg-loaded {
+      background-image: url("../img/feature-4.jpg");
+      background-image: image-set(url("../img/feature-4.webp")1x);
+
+      @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+          background-image: url("../img/feature-4@2x.jpg");
+          background-image: image-set(url("../img/feature-4-2x.webp")2x);
+      }
+  }
+
+  &::before {
+    @include center;
+
+    display: none;
+
+    width: 106%;
+    height: 470px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+  }
+
+  & span {
+    position: relative;
+
+    padding-right: 82px;
+
+    margin: 36px 20px;
+
+    font-size: 20px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    transition: all .25s;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      right: 0;
+
+      width: 70px;
+      border: 1px solid #ffffff;
+
+      transform: translateY(-50%);
+    }
+  }
+
+  & p {
+    width: 88%;
+    margin: auto 20px 15px;
+
+    text-align: left;
+  }
+
+  &:hover {
+    & span {
+      padding-left: 82px;
+
+      &::before {
+        left: 0;
+      }
+    }
+
+    &::before {
+      z-index: -1;
+      display: block;
+    }
+
+    & .services__button {
+      display: block;
+      height: auto;
+      padding: 18px 12.5%;
+      margin: 5px auto 20px 20px;
+
+      font-size: 12px;
+
+      &:hover {
+          color: #ffffff;
+          background-color: #000000;
+      }
+
+      &:active {
+        color: #ffffff;
+
+        background-color: #000000;
+
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.services__button {
+  @include press;
+    @include button-reset;
+    @include button-style;
+
+    height: 0;
+
+    color: #000000;
+
+    font-size: 0;
+
+    background-color: #ffffff;
+
+    transition: all .3s;
+}

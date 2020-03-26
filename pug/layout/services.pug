@@ -1,0 +1,14 @@
+- var servicesArr = [{link: "#", text: "букет невесты и свадебное оформление", number: "01", mod: "bride"}, {link: "#", text: "букеты на торжества", number: "02", mod: "celebration"}, {link: "#", text: "композиции", number: "03", mod: "compositions"}, {link: "#", text: "оформление мероприятий", number: "04", mod: "decor"}]
+
+section.services
+  p Каталог услуг
+  .services__list
+    h2 Каталог услуг
+    ul
+      for i in servicesArr
+        li
+          a.lazy-bg.services__link(href= i.link class="services__link--" + i.mod)
+            span=i.number
+            p=i.text
+            strong.services__button Смотреть работы
+

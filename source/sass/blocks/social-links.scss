@@ -1,0 +1,67 @@
+// * Socials
+.social-links {
+  & ul {
+    @include list-reset;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  & li {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 24px;
+  }
+}
+
+.social-links__link {
+  @include press;
+
+  position: relative;
+
+  display: inline-block;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  fill: none;
+
+  transition: all 0.25s;
+
+  &--insta {
+    stroke: #ffffff;
+    color: #ffffff;
+  }
+
+  &--fb {
+    stroke: #ffffff;
+    color: #ffffff;
+  }
+
+  &--whatsapp {
+    color: #ffffff;
+    fill: #ffffff;
+  }
+
+  &--vk {
+    fill: none;
+    stroke: #ffffff;
+    color: #ffffff;
+  }
+
+  &:hover {
+    stroke: $green;
+    color: $green;
+
+    &--whatsapp {
+      color: $green;
+      fill: $green
+    }
+  }
+
+  &:active {
+    outline: none;
+    stroke: darken($color: $green, $amount: 30%);
+    color: darken($color: $green, $amount: 30%);
+  }
+}
