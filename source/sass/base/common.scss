@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  min-width: 250px;
+  min-width: 288px;
 
   font-family: "Forum", "Garamond", serif;
   font-weight: 400;
@@ -16,7 +16,8 @@ body {
 
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
-input[type="radio"].visually-hidden {
+input[type="radio"].visually-hidden,
+.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -38,7 +39,7 @@ img {
   height: auto;
 }
 
-.overlay {
+.menu-overlay {
   position: fixed;
   z-index: 10;
   top: 0;
@@ -51,11 +52,48 @@ img {
 
   background: $brown;
 
-  transition: all .5s;
+  transition: all 0.25s;
 
   &.open {
-    height: 100%;
+    display: block;
+    width: 100vw;
+    height: 100vh;
     opacity: 1;
     visibility: visible;
   }
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+
+    display: none;
+
+    opacity: 0;
+
+    transform: translate(-50%, -50%);
+
+    transition: all 0.25s;
+
+    &--open {
+        display: block;
+
+        opacity: 1;
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    z-index: 10;
+    content: "";
+    top: 0;
+    left: 0;
+
+    display: none;
+    width: 100%;
+    min-height: 100%;
+
+    background: rgba(0, 0, 0, 0.4);
 }
