@@ -1,0 +1,75 @@
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  box-sizing: content-box;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+
+  &:active {
+    outline: 0;
+  }
+}
+
+@mixin button-style {
+  display: inline-block;
+  box-sizing: border-box;
+
+  font-family: "Forum", "Garamond", serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  appearance: none;
+
+  cursor: pointer;
+}
+
+@mixin center {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+@mixin forum {
+  font-family: "Forum", "Garamond", serif;
+  font-weight: 400;
+}
+
+@mixin press {
+  transition: transform .5s;
+
+  &:hover
+  &:focus {
+    transform: scale(1.03);
+  }
+
+  &:active {
+    transform: scale(.98);
+  }
+}
+
+@keyframes delivery {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}
+
+

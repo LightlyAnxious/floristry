@@ -1,0 +1,9 @@
+include variables.pug
+mixin picture(desktopImg, tabletImg, mobileImg, altText, className)
+  picture
+    source(media=desktop, type='image/webp', data-srcset=('img/' + desktopImg + '.webp 1x, ' + 'img/' + desktopImg + '@2x.webp 2x'))
+    source(media=tablet, type='image/webp', data-srcset=('img/' + tabletImg + '.webp 1x, ' + 'img/' + tabletImg + '@2x.webp 2x'))
+    source(type='image/webp', data-srcset=('img/' + mobileImg + '.webp 1x, ' + 'img/' + mobileImg + '@2x.webp 2x'))
+    source(media=desktop, data-srcset=('img/' + desktopImg + '.jpg 1x, ' + 'img/' + desktopImg + '@2x.jpg 2x'))
+    source(media=tablet, data-srcset=('img/' + tabletImg + '.jpg 1x, ' + 'img/' + tabletImg + '@2x.jpg 2x'))
+    img.lazy(class=className, src=('img/' + mobileImg + '.jpg'), data-srcset=('img/' + mobileImg + '@2x.jpg 2x'), data-src=('img/' + mobileImg + '.jpg'), alt=altText)

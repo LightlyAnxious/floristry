@@ -1,0 +1,144 @@
+// * Socials
+.social-links {
+  & ul {
+    @include list-reset;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  & li {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 24px;
+  }
+}
+
+.social-links__link {
+  @include press;
+
+  display: inline-block;
+
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+
+  fill: none;
+
+  transition: all 0.25s;
+
+  &--insta {
+    stroke: #ffffff;
+    color: #ffffff;
+  }
+
+  &--fb {
+    stroke: #ffffff;
+    color: #ffffff;
+  }
+
+  &--whatsapp {
+    color: #ffffff;
+    fill: #ffffff;
+  }
+
+  &--vk {
+    fill: none;
+    stroke: #ffffff;
+    color: #ffffff;
+  }
+
+  &:hover,
+  &:focus {
+    stroke: $green;
+    color: $green;
+
+    transform: scale(1.03);
+
+    &--whatsapp {
+      color: $green;
+      fill: $green;
+    }
+  }
+
+  &:active {
+    outline: none;
+    stroke: darken($color: $green, $amount: 30%);
+    color: darken($color: $green, $amount: 30%);
+
+    transform: scale(0.98);
+  }
+
+  & svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+// ! Планшетная версия
+
+@media (max-width: $tablet-width) {
+  .social-links {
+    width: 68.86%;
+    max-width: 568px;
+
+    & ul {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      width: 100%;
+      height: 55px;
+    }
+
+    & li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 55px;
+      height: 55px;
+      margin: 0;
+      border-radius: 50%;
+
+      background-color: $brown;
+    }
+  }
+
+  .social-links__link {
+    width: 28px;
+    height: 28px;
+
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// ! Мобильная версия
+
+@media (max-width: $mobile-width) {
+  .social-links {
+    width: 100%;
+    max-width: 367px;
+
+    & ul {
+      height: auto;
+    }
+
+    & li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  .social-links__link {
+    width: 18px;
+    height: 18px;
+  }
+}
