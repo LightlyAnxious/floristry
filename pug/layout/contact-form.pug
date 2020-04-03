@@ -1,0 +1,12 @@
+section.contact-form.modal.lazy-bg
+  h2.visually-hidden Свяжитесь с нами
+  form(action='#', method='post')
+    .contact-form__wrapper
+      button.contact-form__button(type='button')
+      p Оставьте свой номер и мы вам перезвоним
+      label.sr-only(for='name') Имя
+      input(type='text', id='name', name='name', value='', placeholder='Имя', required)
+      label.sr-only(for='phone') Телефон
+      input(type='tel', id='phone', name='phone', pattern='\+?[0-9\s\-\(\)]+', value='', placeholder='Телефон', required)
+      input(type='submit', value='Позвоните мне')
+.modal-overlay

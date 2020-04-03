@@ -1,0 +1,8 @@
+- var socialArr = [{link: "#", id: "icon-insta", mod: "insta"}, {link: "#", id: "icon-fb", mod: "fb"}, {link: "#", id: "icon-whatsapp", mod: "whatsapp"}, {link: "#", id: "icon-vk", mod: "vk"}]
+
+ul
+  for i in socialArr
+    li
+      a.social-links__link(href=i.link, class="social-links__link--" + i.mod)
+        svg(width='26', height='26')
+          use(xlink:href="img/sprite_auto.svg#" + i.id)

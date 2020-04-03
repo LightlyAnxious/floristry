@@ -1,0 +1,154 @@
+.page-footer {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 50%;
+
+    width: 94.53%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    transform: translateX(-50%);
+  }
+}
+
+.page-footer__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 994px;
+  margin: 0 auto;
+}
+
+.page-footer__nav {
+  width: 100%;
+  padding-top: 10px;
+
+  & ul {
+      @include list-reset;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+
+  & li {
+    padding: 6px 0;
+  }
+}
+
+.page-footer__link {
+  @include press;
+
+  display: inline-block;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $green;
+
+    transform: scale(1.03);
+    opacity: 1;
+  }
+
+  &:active {
+    color: darken($color: $green, $amount: 30%);
+
+    transform: scale(.98);
+  }
+}
+
+.page-footer__socials {
+  width: 270px;
+  padding-bottom: 20px;
+
+  & ul {
+    @include list-reset;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & li {
+    padding: 10px;
+  }
+}
+
+// ! Планшетная версия
+
+@media (max-width: $tablet-width) {
+  .page-footer__nav {
+      width: 100%;
+      padding-top: 30px;
+
+      & ul {
+        align-items: center;
+        flex-direction: column;
+      }
+
+      & li {
+          padding: 10px 0;
+
+          text-align: center;
+      }
+  }
+
+  .page-footer__link {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .page-footer__socials {
+    padding-top: 24px;
+    padding-bottom: 35px;
+
+    & a {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+
+//! Мобильная версия
+
+@media (max-width: $mobile-width) {
+  .page-footer__nav {
+    width: 90%;
+    padding: 0 5% 0;
+    margin: 0 auto;
+
+    & ul {
+      margin-top: 25px;
+    }
+
+    & li {
+        padding: 5.5px 0;
+
+    }
+  }
+
+  .page-footer__link {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .page-footer__socials {
+    width: 280px;
+    padding-top: 25px;
+
+    & a {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
