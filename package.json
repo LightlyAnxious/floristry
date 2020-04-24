@@ -5,7 +5,6 @@
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "^9.7.4",
-    "browser-sync": "2.26.x",
     "compression": "^1.7.4",
     "eslint": "^6.8.0",
     "eslint-config-htmlacademy": "0.4.x",
@@ -22,6 +21,7 @@
     "gulp-plumber": "1.2.x",
     "gulp-postcss": "8.0.x",
     "gulp-posthtml": "^3.0.4",
+    "gulp-pretty-html": "^2.0.10",
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "4.0.x",
@@ -66,6 +66,7 @@
     "node": "8.15"
   },
   "dependencies": {
+    "browser-sync": "^2.26.7",
     "cli": "^1.0.1",
     "del": "^4.1.1",
     "editorconfig": "^0.15.3",

@@ -1,9 +1,11 @@
 .services-wrapper {
   display: grid;
 
-  width: 90.1%;
+  width: 100%;
   max-width: 1730px;
   margin: 0 auto;
+  padding: 0 3.125%;
+  box-sizing: border-box;
 
   & span {
     grid-column: 1;
@@ -27,13 +29,14 @@
   grid-column: 1;
   grid-row: 1;
   justify-self: center;
-
   z-index: 2;
 
   width: 100%;
   max-width: 1520px;
-  padding: 0;
+  padding: 0 10px;
   margin: 0 0 55px;
+  box-sizing: border-box;
+
 
   text-align: center;
 
@@ -74,7 +77,10 @@
 
     display: flex;
     flex-wrap: wrap;
+    // justify-content: space-between;
+
     width: 100%;
+    padding: 0;
   }
 
   & li {
@@ -84,16 +90,12 @@
 
     width: 22%;
     height: 450px;
-    margin: 30px 0.7%;
+    margin: 30px 4% 30px 0;
 
     background-color: $brown;
 
-    &:first-of-type {
-      margin-left: 1.18%;
-    }
-
     &:last-of-type {
-      margin-right: 0.7%;
+      margin-right: 0;
     }
   }
 }
@@ -108,7 +110,7 @@
 
   text-decoration: none;
 
-  transition: all .25s;
+  transition: all 0.25s;
 
   &--bride.lazy-bg-loaded {
     background-image: url("../img/feature-1.jpg");

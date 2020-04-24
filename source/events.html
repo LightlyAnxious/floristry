@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Букеты на мероприятия</title>
+  <link rel="stylesheet preload" href="css/style.min.css" as="style">
+  <script defer src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/svgxuse/1.2.6/svgxuse.min.js"></script>
+</head>
+
+<body>
+  <div class="feature-page">
+    <header class="page-header lazy-bg">
+      <div class="page-header__wrapper"><a class="page-header__logo" href="index.html">
+          <svg class="page-header__image">
+            <use xlink:href="img/sprite_auto.svg#logo"></use>
+          </svg></a>
+        <div class="menu-overlay">
+          <nav class="menu">
+            <div class="menu__social-links social-links">
+              <ul>
+                <li><a class="social-links__link social-links__link--insta" href="#">
+                    <svg width="26" height="26">
+                      <use xlink:href="img/sprite_auto.svg#icon-insta"></use>
+                    </svg></a></li>
+                <li><a class="social-links__link social-links__link--fb" href="#">
+                    <svg width="26" height="26">
+                      <use xlink:href="img/sprite_auto.svg#icon-fb"></use>
+                    </svg></a></li>
+                <li><a class="social-links__link social-links__link--whatsapp" href="#">
+                    <svg width="26" height="26">
+                      <use xlink:href="img/sprite_auto.svg#icon-whatsapp"></use>
+                    </svg></a></li>
+                <li><a class="social-links__link social-links__link--vk" href="#">
+                    <svg width="26" height="26">
+                      <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+            <div class="menu__container"><a class="menu__logo">
+                <svg class="menu__image">
+                  <use xlink:href="img/sprite_auto.svg#logo-menu"></use>
+                </svg></a>
+              <ul>
+                <li><a class="menu__link" href="#">Свадебная флористика</a></li>
+                <li><a class="menu__link" href="#">Букеты на любые мероприятия</a></li>
+                <li><a class="menu__link" href="#">Композиции</a></li>
+                <li><a class="menu__link" href="#">Оформление мероприятий</a></li>
+              </ul>
+            </div>
+            <button class="menu__btn"><span class="visually-hidden">закрыть меню</span></button>
+          </nav>
+        </div>
+        <button class="page-header__btn">Меню</button>
+      </div>
+    </header>
+    <section class="card">
+      <div class="card__wrapper">
+        <picture class="card__bg-image">
+          <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/cards/card-1.webp 1x, img/cards/card-1@2x.webp 2x" />
+          <source media="(min-width: 720px)" type="image/webp" data-srcset="img/cards/tablet/card-1--tablet.webp 1x, img/cards/tablet/card-1--tablet@2x.webp 2x" />
+          <source type="image/webp" data-srcset="img/cards/mobile/card-1--mobile.webp 1x, img/cards/mobile/card-1--mobile@2x.webp 2x" />
+          <source media="(min-width: 1140px)" data-srcset="img/cards/card-1.jpg 1x, img/cards/card-1@2x.jpg 2x" />
+          <source media="(min-width: 720px)" data-srcset="img/cards/tablet/card-1--tablet.jpg 1x, img/cards/tablet/card-1--tablet@2x.jpg 2x" /><img class="lazy" src="img/cards/mobile/card-1--mobile.jpg" data-srcset="img/cards/mobile/card-1--mobile@2x.jpg 2x" data-src="img/cards/mobile/card-1--mobile.jpg" alt="Букеты на мероприятия" />
+        </picture>
+        <div class="card__content">
+          <h1 class="card__title">Букеты на мероприятия</h1>
+          <p>
+            У&nbsp;нас есть огромное разноообразие букетов на&nbsp;любое событие. <br>
+							Вы&nbsp;сможете приобрести как нежный букет, так и&nbsp;яркий, а&nbsp;также мужские, круглые, вертикалье, веерообразные, букеты-зонтики, букеты в&nbsp;вегетативной технике и&nbsp;много других экзотических видов.
+						</p>
+          <button class="btn btn--transparent card__btn" id="call-button">Заказать</button>
+          <div class="card__slider">
+            <div class="swiper-container swiper2">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide card__slide">
+                  <!-- Item 1 -->
+                  <picture class="card__slide-image">
+                    <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/cards/card-1-slide-1.webp 1x, img/cards/card-1-slide-1@2x.webp 2x" />
+                    <source media="(min-width: 720px)" type="image/webp" data-srcset="img/cards/tablet/card-1-slide-1--tablet.webp 1x, img/cards/tablet/card-1-slide-1--tablet@2x.webp 2x" />
+                    <source type="image/webp" data-srcset="img/cards/mobile/card-1-slide-1--mobile.webp 1x, img/cards/mobile/card-1-slide-1--mobile@2x.webp 2x" />
+                    <source media="(min-width: 1140px)" data-srcset="img/cards/card-1-slide-1.jpg 1x, img/cards/card-1-slide-1@2x.jpg 2x" />
+                    <source media="(min-width: 720px)" data-srcset="img/cards/tablet/card-1-slide-1--tablet.jpg 1x, img/cards/tablet/card-1-slide-1--tablet@2x.jpg 2x" /><img class="lazy" src="img/cards/mobile/card-1-slide-1--mobile.jpg" data-srcset="img/cards/mobile/card-1-slide-1--mobile@2x.jpg 2x" data-src="img/cards/mobile/card-1-slide-1--mobile.jpg" alt="slide-1" />
+                  </picture>
+                </li>
+                <li class="swiper-slide card__slide">
+                  <!-- Item 2 -->
+                  <picture class="card__slide-image">
+                    <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/cards/card-1-slide-2.webp 1x, img/cards/card-1-slide-2@2x.webp 2x" />
+                    <source media="(min-width: 720px)" type="image/webp" data-srcset="img/cards/tablet/card-1-slide-2--tablet.webp 1x, img/cards/tablet/card-1-slide-2--tablet@2x.webp 2x" />
+                    <source type="image/webp" data-srcset="img/cards/mobile/card-1-slide-2--mobile.webp 1x, img/cards/mobile/card-1-slide-2--mobile@2x.webp 2x" />
+                    <source media="(min-width: 1140px)" data-srcset="img/cards/card-1-slide-2.jpg 1x, img/cards/card-1-slide-2@2x.jpg 2x" />
+                    <source media="(min-width: 720px)" data-srcset="img/cards/tablet/card-1-slide-2--tablet.jpg 1x, img/cards/tablet/card-1-slide-2--tablet@2x.jpg 2x" /><img class="lazy" src="img/cards/mobile/card-1-slide-2--mobile.jpg" data-srcset="img/cards/mobile/card-1-slide-2--mobile@2x.jpg 2x" data-src="img/cards/mobile/card-1-slide-2--mobile.jpg" alt="slide-2" />
+                  </picture>
+                </li>
+                <li class="swiper-slide card__slide">
+                  <!-- Item 3 -->
+                  <picture class="card__slide-image">
+                    <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/cards/card-1-slide-3.webp 1x, img/cards/card-1-slide-3@2x.webp 2x" />
+                    <source media="(min-width: 720px)" type="image/webp" data-srcset="img/cards/tablet/card-1-slide-3--tablet.webp 1x, img/cards/tablet/card-1-slide-3--tablet@2x.webp 2x" />
+                    <source type="image/webp" data-srcset="img/cards/mobile/card-1-slide-3--mobile.webp 1x, img/cards/mobile/card-1-slide-3--mobile@2x.webp 2x" />
+                    <source media="(min-width: 1140px)" data-srcset="img/cards/card-1-slide-3.jpg 1x, img/cards/card-1-slide-3@2x.jpg 2x" />
+                    <source media="(min-width: 720px)" data-srcset="img/cards/tablet/card-1-slide-3--tablet.jpg 1x, img/cards/tablet/card-1-slide-3--tablet@2x.jpg 2x" /><img class="lazy" src="img/cards/mobile/card-1-slide-3--mobile.jpg" data-srcset="img/cards/mobile/card-1-slide-3--mobile@2x.jpg 2x" data-src="img/cards/mobile/card-1-slide-3--mobile.jpg" alt="slide-3" />
+                  </picture>
+                </li>
+                <li class="swiper-slide card__slide">
+                  <!-- Item 4 -->
+                  <picture class="card__slide-image">
+                    <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/cards/card-1-slide-4.webp 1x, img/cards/card-1-slide-4@2x.webp 2x" />
+                    <source media="(min-width: 720px)" type="image/webp" data-srcset="img/cards/tablet/card-1-slide-4--tablet.webp 1x, img/cards/tablet/card-1-slide-4--tablet@2x.webp 2x" />
+                    <source type="image/webp" data-srcset="img/cards/mobile/card-1-slide-4--mobile.webp 1x, img/cards/mobile/card-1-slide-4--mobile@2x.webp 2x" />
+                    <source media="(min-width: 1140px)" data-srcset="img/cards/card-1-slide-4.jpg 1x, img/cards/card-1-slide-4@2x.jpg 2x" />
+                    <source media="(min-width: 720px)" data-srcset="img/cards/tablet/card-1-slide-4--tablet.jpg 1x, img/cards/tablet/card-1-slide-4--tablet@2x.jpg 2x" /><img class="lazy" src="img/cards/mobile/card-1-slide-4--mobile.jpg" data-srcset="img/cards/mobile/card-1-slide-4--mobile@2x.jpg 2x" data-src="img/cards/mobile/card-1-slide-4--mobile.jpg" alt="slide-4" />
+                  </picture>
+                </li>
+                <li class="swiper-slide card__slide">
+                  <!-- Item 5 -->
+                  <picture class="card__slide-image">
+                    <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/cards/card-1-slide-5.webp 1x, img/cards/card-1-slide-5@2x.webp 2x" />
+                    <source media="(min-width: 720px)" type="image/webp" data-srcset="img/cards/tablet/card-1-slide-5--tablet.webp 1x, img/cards/tablet/card-1-slide-5--tablet@2x.webp 2x" />
+                    <source type="image/webp" data-srcset="img/cards/mobile/card-1-slide-5--mobile.webp 1x, img/cards/mobile/card-1-slide-5--mobile@2x.webp 2x" />
+                    <source media="(min-width: 1140px)" data-srcset="img/cards/card-1-slide-5.jpg 1x, img/cards/card-1-slide-5@2x.jpg 2x" />
+                    <source media="(min-width: 720px)" data-srcset="img/cards/tablet/card-1-slide-5--tablet.jpg 1x, img/cards/tablet/card-1-slide-5--tablet@2x.jpg 2x" /><img class="lazy" src="img/cards/mobile/card-1-slide-5--mobile.jpg" data-srcset="img/cards/mobile/card-1-slide-5--mobile@2x.jpg 2x" data-src="img/cards/mobile/card-1-slide-5--mobile.jpg" alt="slide-5" />
+                  </picture>
+                </li>
+                <li class="swiper-slide card__slide">
+                  <!-- Item 6 -->
+                  <picture class="card__slide-image">
+                    <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/cards/card-1-slide-6.webp 1x, img/cards/card-1-slide-6@2x.webp 2x" />
+                    <source media="(min-width: 720px)" type="image/webp" data-srcset="img/cards/tablet/card-1-slide-6--tablet.webp 1x, img/cards/tablet/card-1-slide-6--tablet@2x.webp 2x" />
+                    <source type="image/webp" data-srcset="img/cards/mobile/card-1-slide-6--mobile.webp 1x, img/cards/mobile/card-1-slide-6--mobile@2x.webp 2x" />
+                    <source media="(min-width: 1140px)" data-srcset="img/cards/card-1-slide-6.jpg 1x, img/cards/card-1-slide-6@2x.jpg 2x" />
+                    <source media="(min-width: 720px)" data-srcset="img/cards/tablet/card-1-slide-6--tablet.jpg 1x, img/cards/tablet/card-1-slide-6--tablet@2x.jpg 2x" /><img class="lazy" src="img/cards/mobile/card-1-slide-6--mobile.jpg" data-srcset="img/cards/mobile/card-1-slide-6--mobile@2x.jpg 2x" data-src="img/cards/mobile/card-1-slide-6--mobile.jpg" alt="slide-6" />
+                  </picture>
+                </li>
+                <li class="swiper-slide card__slide">
+                  <!-- Item 7 -->
+                  <picture class="card__slide-image">
+                    <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/cards/card-1-slide-7.webp 1x, img/cards/card-1-slide-7@2x.webp 2x" />
+                    <source media="(min-width: 720px)" type="image/webp" data-srcset="img/cards/tablet/card-1-slide-7--tablet.webp 1x, img/cards/tablet/card-1-slide-7--tablet@2x.webp 2x" />
+                    <source type="image/webp" data-srcset="img/cards/mobile/card-1-slide-7--mobile.webp 1x, img/cards/mobile/card-1-slide-7--mobile@2x.webp 2x" />
+                    <source media="(min-width: 1140px)" data-srcset="img/cards/card-1-slide-7.jpg 1x, img/cards/card-1-slide-7@2x.jpg 2x" />
+                    <source media="(min-width: 720px)" data-srcset="img/cards/tablet/card-1-slide-7--tablet.jpg 1x, img/cards/tablet/card-1-slide-7--tablet@2x.jpg 2x" /><img class="lazy" src="img/cards/mobile/card-1-slide-7--mobile.jpg" data-srcset="img/cards/mobile/card-1-slide-7--mobile@2x.jpg 2x" data-src="img/cards/mobile/card-1-slide-7--mobile.jpg" alt="slide-7" />
+                  </picture>
+                </li>
+                <li class="swiper-slide card__slide">
+                  <!-- Item 8 -->
+                  <picture class="card__slide-image">
+                    <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/cards/card-1-slide-8.webp 1x, img/cards/card-1-slide-8@2x.webp 2x" />
+                    <source media="(min-width: 720px)" type="image/webp" data-srcset="img/cards/tablet/card-1-slide-8--tablet.webp 1x, img/cards/tablet/card-1-slide-8--tablet@2x.webp 2x" />
+                    <source type="image/webp" data-srcset="img/cards/mobile/card-1-slide-8--mobile.webp 1x, img/cards/mobile/card-1-slide-8--mobile@2x.webp 2x" />
+                    <source media="(min-width: 1140px)" data-srcset="img/cards/card-1-slide-8.jpg 1x, img/cards/card-1-slide-8@2x.jpg 2x" />
+                    <source media="(min-width: 720px)" data-srcset="img/cards/tablet/card-1-slide-8--tablet.jpg 1x, img/cards/tablet/card-1-slide-8--tablet@2x.jpg 2x" /><img class="lazy" src="img/cards/mobile/card-1-slide-8--mobile.jpg" data-srcset="img/cards/mobile/card-1-slide-8--mobile@2x.jpg 2x" data-src="img/cards/mobile/card-1-slide-8--mobile.jpg" alt="slide-8" />
+                  </picture>
+                </li>
+              </ul>
+            </div>
+            <div class="card__controls">
+              <button class="card__control card__control--next"></button>
+              <button class="card__control card__control--prev"></button>
+            </div>
+          </div><a class="card__social-link" href="#"><span>Больше фотографий в профиле</span>
+            <svg class="card__icon">
+              <use xlink:href="img/sprite_auto.svg#icon-insta"></use>
+            </svg></a>
+        </div>
+      </div>
+    </section>
+    <section class="contact-form modal">
+      <h2 class="visually-hidden">Свяжитесь с нами</h2>
+      <form action="#" method="post">
+        <div class="contact-form__wrapper">
+          <picture class="contact-form__bg-image">
+            <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/form-bg.webp 1x, img/form-bg@2x.webp 2x">
+            <source media="(min-width: 720px)" type="image/webp" data-srcset="img/form-bg.webp 1x, img/form-bg@2x.webp 2x">
+            <source type="image/webp" data-srcset="img/form-bg.webp 1x, img/form-bg@2x.webp 2x">
+            <source media="(min-width: 1140px)" data-srcset="img/form-bg.jpg 1x, img/form-bg@2x.jpg 2x">
+            <source media="(min-width: 720px)" data-srcset="img/form-bg.jpg 1x, img/form-bg@2x.jpg 2x"><img class="lazy" src="img/form-bg.jpg" data-srcset="img/form-bg@2x.jpg 2x" data-src="img/form-bg.jpg" alt="Фото цветов">
+          </picture>
+          <div class="contact-form__fields">
+            <button class="contact-form__close" type="button"></button>
+            <p>Оставьте свой номер и мы вам перезвоним</p>
+            <label class="sr-only" for="name">Имя</label>
+            <input type="text" id="name" name="name" value="" placeholder="Имя" required>
+            <label class="sr-only" for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" pattern="+?[0-9s-()]+" value="" placeholder="Телефон" required>
+            <button class="contact-form__submit btn btn--white" type="submit">Позвоните мне</button>
+          </div>
+        </div>
+      </form>
+    </section>
+    <div class="modal-overlay"></div>
+  </div>
+  <script src="js/vendor.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>
