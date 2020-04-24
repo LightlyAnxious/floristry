@@ -14,6 +14,10 @@ body {
   background-color: $brown;
 }
 
+main {
+  flex: 1 0 auto;
+}
+
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden,
@@ -39,6 +43,74 @@ img {
   height: auto;
 }
 
+.btn {
+  @include button-reset;
+  @include press;
+
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 19px 30px;
+
+  font-family: "Forum", "Garamond", serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease-in-out;
+
+  &--transparent {
+    border: 1px solid #ffffff;
+
+    color: #ffffff;
+
+    &:hover,
+    &:focus {
+      background-color: #ffffff;
+
+      color: #000000;
+
+      outline: none;
+    }
+
+    &:active {
+      background-color: #ffffff;
+
+      color: #000000;
+
+      opacity: 0.4;
+      outline: none;
+    }
+  }
+
+  &--white {
+    border: none;
+
+    color: #000000;
+
+    background-color: #ffffff;
+
+    &:hover {
+      color: #ffffff;
+
+      background-color: #000000;
+      outline: none;
+    }
+
+    &:active {
+      color: #ffffff;
+
+      background-color: #000000;
+      outline: none;
+      opacity: 0.5;
+    }
+  }
+}
+
 .menu-overlay {
   position: fixed;
   z-index: 10;
@@ -52,8 +124,6 @@ img {
 
   background: $brown;
 
-  transition: all 0.25s;
-
   &.open {
     display: block;
     width: 100vw;
@@ -64,36 +134,36 @@ img {
 }
 
 .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 20;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
 
-    display: none;
+  display: none;
 
-    opacity: 0;
+  opacity: 0;
 
-    transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
-    transition: all 0.25s;
+  transition: all 0.25s;
 
-    &--open {
-        display: block;
+  &--open {
+    display: block;
 
-        opacity: 1;
-    }
+    opacity: 1;
+  }
 }
 
 .modal-overlay {
-    position: fixed;
-    z-index: 10;
-    content: "";
-    top: 0;
-    left: 0;
+  position: fixed;
+  z-index: 10;
+  content: "";
+  top: 0;
+  left: 0;
 
-    display: none;
-    width: 100%;
-    min-height: 100%;
+  display: none;
+  width: 100%;
+  min-height: 100%;
 
-    background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
 }

@@ -21,6 +21,7 @@ var del = require("del");
 var uglify = require("gulp-uglify");
 var concat = require("gulp-concat");
 var pug = require("gulp-pug");
+var prettyHtml = require("gulp-pretty-html");
 
 function onError(err) {
   console.log(err);
@@ -28,12 +29,23 @@ function onError(err) {
 }
 
 gulp.task("views", function buildHTML() {
-  return gulp.src('pug/*.+(jade|pug)')
+  return gulp
+    .src("pug/page/*.+(jade|pug)")
     .pipe(plumber(onError))
-    .pipe(pug({
-      pretty: '\t'
-    }))
-    .pipe(gulp.dest('source'))
+    .pipe(
+      pug({
+        pretty: "\t",
+      })
+    )
+    .pipe(
+      prettyHtml({
+        indent_size: 2,
+        indent_char: " ",
+        unformatted: ["code", "pre", "em", "strong", "span", "i", "b", "br"],
+        end_with_newline: true,
+      })
+    )
+    .pipe(gulp.dest("source"));
 });
 
 gulp.task("css", function() {
@@ -61,6 +73,10 @@ gulp.task('js', function() {
     .pipe(gulp.dest('build/js'));
 });
 
+gulp.task("jscopy", function () {
+  return gulp.src("source/js/**/*.js").pipe(gulp.dest("build/js"));
+});
+
 gulp.task("server", function() {
   server.init({
     server: "build/",
@@ -73,7 +89,8 @@ gulp.task("server", function() {
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
   gulp.watch("pug/**/*.pug", gulp.series("views"));
   gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
-  gulp.watch("../**/*.html", gulp.series("html", "refresh"));
+  gulp.watch("source/*.html", gulp.series("html", "refresh"));
+  gulp.watch("source/js/**/*.js", gulp.series("jscopy", "refresh"));
 });
 
 gulp.task("refresh", function(done) {
@@ -82,31 +99,21 @@ gulp.task("refresh", function(done) {
 });
 
 gulp.task("images", function() {
-  return gulp.src([
-      'source/img/**/*.{png,jpg,svg}',
-      '!source/img/**/_*/**/*'
-    ])
-    .pipe(imagemin([
-      pngquant({
-        speed: 1,
-        quality: 90
-      }),
-      zopfli({
-        more: true
-      }),
-      imagemin.svgo({
-        plugins: [{
-          removeViewBox: false
-        }]
-      }),
-      imagemin.jpegtran({
-        progressive: true
-      }),
-      mozjpeg({
-        quality: 90
-      })
-      // imagemin.svgo()
-    ]))
+  return gulp
+    .src(["source/img/**/*.{png,jpg,svg}", "!source/img/**/_*/**/*"])
+    .pipe(
+      imagemin([
+        imagemin.optipng({ optimizationLevel: 3 }),
+        imagemin.jpegtran({ progressive: true }),
+        imagemin.svgo({
+          plugins: [
+            {
+              removeViewBox: false,
+            },
+          ],
+        }),
+      ])
+    )
 
     .pipe(gulp.dest("build/img"));
 

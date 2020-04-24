@@ -1,0 +1,16 @@
+include ../utils/mixins.pug
+
+section.contact-form.modal
+  h2.visually-hidden Свяжитесь с нами
+  form(action='#', method='post')
+    .contact-form__wrapper
+      +picture('form-bg', 'form-bg', 'form-bg', 'Фото цветов', 'contact-form__bg-image')
+      .contact-form__fields
+        button.contact-form__close(type='button')
+        p Оставьте свой номер и мы вам перезвоним
+        label.sr-only(for='name') Имя
+        input(type='text', id='name', name='name', value='', placeholder='Имя', required)
+        label.sr-only(for='phone') Телефон
+        input(type='tel', id='phone', name='phone', pattern='\+?[0-9\s\-\(\)]+', value='', placeholder='Телефон', required)
+        button.contact-form__submit.btn.btn--white(type='submit') Позвоните мне
+.modal-overlay

@@ -1,0 +1,276 @@
+.banner__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: 90.1%;
+  max-width: 1735px;
+  margin: 0 auto;
+  padding: 105px 2% 90px;
+}
+
+.banner__social-links {
+  width: 35px;
+  margin-top: auto;
+  margin-bottom: 120px;
+}
+
+.banner__promo {
+  display: flex;
+  flex-direction: column;
+  width: 820px;
+  align-items: center;
+
+  & strong {
+    display: inline-block;
+    margin-bottom: 84px;
+
+    font-size: 120px;
+    line-height: 132px;
+    text-align: center;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  & a {
+    @include press;
+
+    display: inline-block;
+    padding: 17px 38px;
+    margin-bottom: 327px;
+    border: 1px solid #ffffff;
+
+    font-size: 12px;
+    line-height: 13px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      border-color: #ffffff;
+
+      color: #000000;
+
+      background: #ffffff;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
+
+// * Scroll down
+.banner__scroll {
+  @include press;
+
+  position: relative;
+
+  width: 23px;
+  height: 165px;
+  margin-top: auto;
+  margin-bottom: 135px;
+
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+
+  transition: all 0.25s;
+
+  cursor: pointer;
+
+  & span {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+    width: 212px;
+    height: 23px;
+    transform-origin: left top;
+    transform: rotate(90deg) translateY(-100%);
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 120%;
+    left: 50%;
+
+    width: 20px;
+    height: 2px;
+
+    background-color: #ffffff;
+
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 120%;
+    left: 50%;
+
+    width: 9px;
+    height: 9px;
+
+    border-right: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+
+    transform: translateX(-50%) rotate(135deg);
+  }
+
+  &:hover {
+    color: $green;
+
+    &::before {
+      background-color: $green;
+    }
+
+    &::after {
+      border-color: $green;
+    }
+  }
+
+  &:active {
+    color: darken($color: $green, $amount: 30%);
+
+    &::before {
+      background-color: darken($color: $green, $amount: 30%);
+    }
+
+    &::after {
+      border-color: darken($color: $green, $amount: 30%);
+    }
+  }
+}
+
+// ! Планшетная версия
+
+@media (max-width: $tablet-width) {
+  .banner__wrapper {
+    flex-direction: column;
+    align-items: center;
+
+    width: 87%;
+    padding: 85px 1.45% 55px;
+  }
+
+  .banner__promo {
+    order: 1;
+
+    width: 84%;
+
+    & strong {
+      font-size: 70px;
+      line-height: 77px;
+    }
+
+    & a {
+      padding: 20px 52px;
+      margin-bottom: 212px;
+
+      font-size: 15px;
+      line-height: 17px;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  .banner__social-links {
+    order: 2;
+
+    width: auto;
+    margin-bottom: 35px;
+  }
+
+  .banner__scroll {
+    order: 3;
+
+    width: 39px;
+    height: 44px;
+    margin: 0;
+
+    font-size: 0;
+
+    transform: unset;
+
+    & span {
+      display: none;
+    }
+
+    &::before {
+      top: 0;
+
+      height: 42px;
+      width: 2px;
+
+      transform: translateX(-50%);
+    }
+
+    &::after {
+      top: 53%;
+
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+// ! Мобильная версия
+
+@media (max-width: $mobile-width) {
+  .banner__wrapper {
+    width: 81.25%;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 9% 40px;
+  }
+
+  .banner__promo {
+    order: 1;
+
+    width: 91.53%;
+
+    & strong {
+      margin-bottom: 35px;
+
+      font-size: 30px;
+      line-height: 140%;
+    }
+
+    & a {
+      padding: 18px 30px;
+      margin-bottom: 70px;
+
+      font-size: 10px;
+      line-height: 11px;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  .banner__social-links {
+    margin-bottom: 25px;
+  }
+
+  .banner__scroll {
+    width: 12px;
+    height: 21px;
+    margin-bottom: 40px;
+
+    &::before {
+      height: 21px;
+    }
+
+    &::after {
+      top: 53%;
+
+      width: 9px;
+      height: 9px;
+    }
+  }
+}

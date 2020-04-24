@@ -1,0 +1,34 @@
+.intro {
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+.intro__bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  pointer-events: none;
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+
+    background: linear-gradient(to top, #3b181e, transparent);
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

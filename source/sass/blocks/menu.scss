@@ -50,7 +50,7 @@
 .menu__social-links {
   align-self: flex-start;
 
-  margin-top: 633px;
+  margin-top: 639px;
   width: 34px;
 }
 
@@ -186,10 +186,6 @@
     display: none;
   }
 
-  .menu__btn {
-    order: 1;
-  }
-
   .menu__container {
     order: 2;
   }
@@ -201,6 +197,7 @@
   }
 
   .menu__btn {
+    order: 1;
     width: 21px;
     height: 21px;
     margin: 0 0 0 auto;
@@ -220,6 +217,7 @@
 @media (max-width: $mobile-width) {
   .menu {
     padding: 25px;
+    box-sizing: border-box;
   }
 
   .menu__container {

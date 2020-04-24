@@ -9,7 +9,7 @@
   var modalOverlay = document.querySelector('.modal-overlay');
   var servicesList = document.querySelector('.services__list');
   var callButton = document.querySelector('#call-button');
-  var modalClose = document.querySelector('.contact-form__button');
+  var modalClose = document.querySelector('.contact-form__close');
   const desktop = window.matchMedia('(min-width: 1140px)');
   var winX = null, winY = null;
 
@@ -45,42 +45,30 @@
     openBtn.addEventListener('click', function() {
       menuOverlay.classList.toggle('open');
       // * Ограничение табуляции модальных окон
-      trapFocus(menuOverlay);
+      // trapFocus(menuOverlay);
       disableWindowScroll();
     });
     closeBtn.addEventListener('click', function (evt) {
       evt.preventDefault();
       menuOverlay.classList.toggle('open');
-      trapFocus(menuOverlay).release();
+      // trapFocus(menuOverlay).release();
       enableWindowScroll();
     });
   }
 
   // * Вызов и закрытие модального окна
-  callButton.addEventListener('click', () => openModal(modal));
-  modalClose.addEventListener('click', function () {
-    modal.classList.remove('modal--open');
-    modalOverlay.style.display = "none";
-    callButton.removeEventListener('click', () => openModal(modal))
-    enableWindowScroll();
-  });
-  modalOverlay.addEventListener('click', function () {
-    modal.classList.remove('modal--open');
-    modalOverlay.style.display = "none";
-    callButton.removeEventListener('click', () => openModal(modal))
-    enableWindowScroll();
-  });
-
   if (callButton && modal && modalClose && modalOverlay) {
-    callButton.addEventListener('click', () => openModal(modal));
-    modalClose.addEventListener('click', function () {
-      modal.classList.remove('open');
-      callButton.removeEventListener('click', () => openModal(modal))
+    callButton.addEventListener("click", () => openModal(modal));
+    modalClose.addEventListener("click", function () {
+      modal.classList.remove("modal--open");
+      modalOverlay.style.display = "none";
+      callButton.removeEventListener("click", () => openModal(modal));
       enableWindowScroll();
     });
-    modalOverlay.addEventListener('click', function() {
-      modal.classList.remove('modal--open');
-      callButton.removeEventListener('click', () => openModal(modal))
+    modalOverlay.addEventListener("click", function () {
+      modal.classList.remove("modal--open");
+      modalOverlay.style.display = "none";
+      callButton.removeEventListener("click", () => openModal(modal));
       enableWindowScroll();
     });
   }
@@ -110,7 +98,7 @@
   };
 
   const enableSwiper = function() {
-    servicesSlider = new Swiper('.swiper-container', {
+    servicesSlider = new Swiper('.swiper1', {
 
 
       breakpoints: {
@@ -161,5 +149,61 @@
   desktop.addListener(breakpointChecker);
 
   breakpointChecker();
+
+  // ! Инициализация слайдера карточек услуг
+
+  let cardsSlider = new Swiper(".swiper2", {
+    slidesPerView: 4,
+    slidesPerGroup: 4,
+    initialSlide: 0,
+    spaceBetween: 20,
+    // setWrapperSize: true,
+    a11y: true,
+    keyboardControl: true,
+    grabCursor: true,
+    updateOnWindowResize: true,
+    // cssWidthAndHeight: true,
+
+    breakpoints: {
+      250: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 0,
+        initialSlide: 0,
+
+        setWrapperSize: true,
+        a11y: true,
+        keyboardControl: true,
+        grabCursor: true,
+        updateOnWindowResize: true,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+      },
+
+      768: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        initialSlide: 0,
+        setWrapperSize: true,
+        a11y: true,
+        keyboardControl: true,
+        grabCursor: true,
+        updateOnWindowResize: true,
+        cssWidthAndHeight: true,
+      },
+
+      1141: {
+        spaceBetween: 9,
+      },
+
+      1300: {
+        spaceBetween: 12,
+      },
+
+      1500: {
+        spaceBetween: 16,
+      },
+    },
+  });
 
 })(); /* IIFE end */

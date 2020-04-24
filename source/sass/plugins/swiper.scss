@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
 * Swiper 5.3.1
 * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -601,6 +603,8 @@ button.swiper-pagination-bullet {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden
 }
+
+// ! Tablet
 
 @media (max-width: $tablet-width) {
   .swiper-slide {
