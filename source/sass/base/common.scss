@@ -109,6 +109,29 @@ img {
       opacity: 0.5;
     }
   }
+
+  &--black {
+    border: none;
+
+    color: #ffffff;
+
+    background-color: #000000;
+    outline: none;
+
+    &:hover {
+      color: #000000;
+
+      background-color: #ffffff;
+      outline: none;
+    }
+
+    &:active {
+      color: #000000;
+
+      background-color: #ffffff;
+      opacity: 0.5;
+    }
+  }
 }
 
 .menu-overlay {

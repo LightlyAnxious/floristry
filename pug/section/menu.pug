@@ -2,17 +2,17 @@ nav.menu
   .menu__social-links.social-links
     include socials.pug
   .menu__container
-    a.menu__logo
+    a.menu__logo(aria-label= 'Меню')
       svg.menu__image
         use(xlink:href='img/sprite_auto.svg#logo-menu')
-    ul
-      li
-        a.menu__link(href='#') Свадебная флористика
-      li
-        a.menu__link(href='#') Букеты на любые мероприятия
-      li
-        a.menu__link(href='#') Композиции
-      li
-        a.menu__link(href='#') Оформление мероприятий
-  button.menu__btn
+    ul.menu__list
+      li.menu__item
+        a.menu__link(href='wedding.html', aria-label= 'Свадебная флористика') Свадебная <br> флористика
+      li.menu__item
+        a.menu__link(href='events.html', aria-label= 'Букеты на любые <br> мероприятия') Букеты на любые мероприятия
+      li.menu__item
+        a.menu__link(href='compositions.html', aria-label= 'Композиции') Композиции
+      li.menu__item
+        a.menu__link(href='decoration.html', aria-label= 'Оформление мероприятий') Оформление <br> мероприятий
+  button.menu__btn(aria-label='Закрыть меню')
     span.visually-hidden закрыть меню

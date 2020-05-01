@@ -5,6 +5,10 @@ section.banner
     .banner__promo
       h1.visually-hidden(aria-hidden='true') Весна всегда - цветы, аксессуары, настроение
       strong Флористика с душой
-      a.btn.btn--transparent(href='gallery.html') Смотреть работы
-    a.banner__scroll(href= '#')
+      a.btn.btn--transparent.banner__btn(href='gallery.html', aria-label='Смотреть работы') Смотреть работы
+      a.banner__mouse-link(href='#services', aria-label='Скролл вниз')
+        include ../../source/img/icon-mouse.svg
+    a.banner__scroll(href= '#services', aria-label='Перейти к каталогу услуг')
       span cмотреть каталог
+      svg.banner__arrow(width='14', height='20')
+        use(xlink:href='img/sprite_auto.svg#icon-arrow')
