@@ -7,23 +7,8 @@ html(lang='ru')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title #{title}
     link(rel='stylesheet preload', href='css/style.min.css', as='style')
-    script(defer, src='https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', crossorigin='anonymous')
-    script(defer, src='https://cdnjs.cloudflare.com/ajax/libs/svgxuse/1.2.6/svgxuse.min.js')
   body
     block content
-  footer.page-footer
-  .page-footer__wrapper
-    .page-footer__nav
-      ul
-        li
-          a.page-footer__link(href='#') Свадебная флористика
-        li
-          a.page-footer__link(href='events.html') Букеты на любые мероприятия
-        li
-          a.page-footer__link(href='#') Букеты невесты
-        li
-          a.page-footer__link(href='#') Композиции
-        li
-          a.page-footer__link(href='#') Оформление мероприятий
-    .page-footer__socials
-      include ../section/socials.pug
+    include ../section/footer.pug
+    script(src='js/vendor.js', defer)
+    script(src='js/main.js', defer)

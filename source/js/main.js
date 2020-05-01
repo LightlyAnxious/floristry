@@ -98,50 +98,45 @@
   };
 
   const enableSwiper = function() {
-    servicesSlider = new Swiper('.swiper1', {
-
+    servicesSlider = new Swiper(".swiper1", {
+      a11y: true,
+      paginationBulletMessage: "Go to slide {{index}}",
 
       breakpoints: {
         250: {
           pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            bulletElement: 'button',
+            el: ".swiper-pagination",
+            type: "bullets",
+            bulletElement: "button",
           },
 
           slidesPerView: 1,
           slidesPerGroup: 1,
           spaceBetween: 28,
           initialSlide: 0,
-
           setWrapperSize: true,
-          a11y: true,
-          keyboardControl: true,
           grabCursor: true,
           updateOnWindowResize: true,
           centeredSlides: true,
-          centeredSlidesBounds: true
+          centeredSlidesBounds: true,
         },
 
         768: {
           pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            bulletElement: 'button',
-            clickable: true
+            el: ".swiper-pagination",
+            type: "bullets",
+            bulletElement: "button",
+            clickable: true,
           },
 
           slidesPerView: 2,
           slidesPerGroup: 2,
-          // spaceBetween: 28,
           initialSlide: 0,
           setWrapperSize: true,
-          a11y: true,
-          keyboardControl: true,
           grabCursor: true,
           updateOnWindowResize: true,
           cssWidthAndHeight: true,
-        }
+        },
       },
     });
   };
@@ -159,6 +154,7 @@
     spaceBetween: 20,
     // setWrapperSize: true,
     a11y: true,
+    paginationBulletMessage: 'Go to slide {{index}}',
     keyboardControl: true,
     grabCursor: true,
     updateOnWindowResize: true,
@@ -166,26 +162,30 @@
 
     breakpoints: {
       250: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 0,
+        spaceBetween: 15,
         initialSlide: 0,
-
-        setWrapperSize: true,
-        a11y: true,
         keyboardControl: true,
         grabCursor: true,
         updateOnWindowResize: true,
-        centeredSlides: true,
-        centeredSlidesBounds: true,
+      },
+
+      384: {
+        initialSlide: 0,
+        on: {
+          beforeResize() {
+            if (window.innerWidth >= 384) {
+              cardsSlider.slides.css("width", "");
+            }
+          },
+        },
       },
 
       768: {
         slidesPerView: 4,
         slidesPerGroup: 4,
         initialSlide: 0,
+        spaceBetween: 23,
         setWrapperSize: true,
-        a11y: true,
         keyboardControl: true,
         grabCursor: true,
         updateOnWindowResize: true,

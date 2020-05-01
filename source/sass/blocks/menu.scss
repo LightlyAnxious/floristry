@@ -13,7 +13,7 @@
 .menu__logo {
   width: 158px;
   height: 49px;
-  margin-bottom: 90px;
+  margin-bottom: 30px;
 
   & svg {
     width: 100%;
@@ -50,7 +50,7 @@
 .menu__social-links {
   align-self: flex-start;
 
-  margin-top: 639px;
+  margin-top: 529px;
   width: 34px;
 }
 
@@ -58,22 +58,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
-  & ul {
-    @include list-reset;
+.menu__list {
+  @include list-reset;
 
-    width: 450px;
-  }
+  width: 450px;
+  padding: 120px 0 70px;
+}
 
-  & li {
-    @include press;
+.menu__item {
+  min-height: 150px;
+  margin-bottom: 20px;
 
-    margin-bottom: 80px;
+  text-align: center;
 
-    text-align: center;
-
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
 
 .menu__link {
@@ -87,15 +87,25 @@
 
   opacity: 0.5;
 
-  transition: all 0.25s;
+  transition: color 0.25s, font-size 0.25s, line-height 0.25s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $green;
-    text-align: center;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
+    font-size: 45px;
+    line-height: 50px;
 
     opacity: 1;
+    outline: none;
+  }
+
+  &:active {
+    color: $green;
+    font-size: 45px;
+    line-height: 50px;
+
+    opacity: 0.3;
+    outline: none;
   }
 }
 
@@ -142,7 +152,10 @@
     transition: all 0.25s;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
+    outline: none;
+
     &::before {
       background-color: $green;
 
@@ -157,6 +170,8 @@
   }
 
   &:active {
+    outline: none;
+
     &::before {
       background-color: darken($color: $green, $amount: 30%);
 
@@ -210,12 +225,31 @@
       width: 27px;
     }
   }
+
+  .menu__list {
+    padding: 50px 0 30px;
+  }
+
+  .menu__item {
+    min-height: 120px;
+    margin-bottom: 20px;
+  }
+
+  .menu__link {
+    &:hover,
+    &:focus {
+      font-size: 45px;
+      line-height: 50px;
+    }
+  }
 }
 
 // ! Мобильная версия
 
 @media (max-width: $mobile-width) {
   .menu {
+    position: relative;
+
     padding: 25px;
     box-sizing: border-box;
   }
@@ -225,15 +259,20 @@
   }
 
   .menu__logo {
-    width: 137px;
-    height: 47px;
-    margin-top: 50px;
+    width: 90px;
+    height: 29px;
+    margin-top: 0;
+    margin-bottom: 30px;
   }
 
   .menu__btn {
+    position: absolute;
+    top: 24px;
+    right: 2%;
+
     width: 21px;
     height: 21px;
-    margin: 0 0 0 auto;
+    margin: 0;
 
     &::before {
       width: 27px;
@@ -244,8 +283,29 @@
     }
   }
 
+  .menu__item {
+    min-height: 80px;
+  }
+
   .menu__link {
+    margin-bottom: 50px;
+
     font-size: 15px;
     line-height: 17px;
+
+    &:hover,
+    &:focus {
+      font-size: 25px;
+      line-height: 28px;
+    }
+
+    &:active {
+      font-size: 25px;
+      line-height: 28px;
+    }
+  }
+
+  .menu__social-links {
+    display: none;
   }
 }

@@ -1,6 +1,5 @@
 .page-header {
   width: 100%;
-  min-height: 221px;
 }
 
 .page-header__wrapper {
@@ -11,7 +10,7 @@
   width: 90.1%;
   max-width: 1735px;
   margin: 0 auto;
-  padding: 87px 2%;
+  padding: 87px 2% 30px;
 }
 
 // * Logo
@@ -137,10 +136,6 @@
 // ! Планшетная версия
 
 @media (max-width: $tablet-width) {
-  .page-header {
-    min-height: 123px;
-  }
-
   .page-header__wrapper {
     width: 87%;
     padding: 37px 1.45%;

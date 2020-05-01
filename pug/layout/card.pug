@@ -13,7 +13,7 @@ html(lang='ru')
   body
     .feature-page
       header.page-header.lazy-bg
-        .page-header__wrapper
+        .page-header__wrapper.feature-page__header
           a.page-header__logo(href= 'index.html')
             svg.page-header__image
               use(xlink:href='img/sprite_auto.svg#logo')
@@ -24,8 +24,6 @@ html(lang='ru')
         .card__wrapper
           +picture(('cards/' + cardBg), ('cards/tablet/' + cardBg + '--tablet'), ('cards/mobile/' + cardBg + '--mobile'), cardBgText, 'card__bg-image')
           .card__content
-            block card
-            button.btn.btn--transparent.card__btn#call-button Заказать
             .card__slider
               .swiper-container.swiper2
                 ul.swiper-wrapper
@@ -36,10 +34,14 @@ html(lang='ru')
               .card__controls
                 button.card__control.card__control--next
                 button.card__control.card__control--prev
+            .card__inner
+              block card
+              button.btn.btn--transparent.card__btn#call-button Заказать
             a.card__social-link(href='#')
               span Больше фотографий в профиле
               svg.card__icon
                 use(xlink:href='img/sprite_auto.svg#icon-insta')
-      include ../section/contact-form.pug
+    include ../section/footer.pug
+    include ../section/contact-form.pug
     script(src='js/vendor.js', defer)
     script(src='js/main.js', defer)

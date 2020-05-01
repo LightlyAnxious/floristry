@@ -4,7 +4,11 @@ section.contact-form.modal
   h2.visually-hidden Свяжитесь с нами
   form(action='#', method='post')
     .contact-form__wrapper
-      +picture('form-bg', 'form-bg', 'form-bg', 'Фото цветов', 'contact-form__bg-image')
+      picture.contact-form__bg-image
+        source(media='(min-width: 1140px)', type='image/webp', data-srcset='img/form-bg.webp 1x, img/form-bg@2x.webp 2x')
+        source(media='(min-width: 1140px)', data-srcset='img/form-bg.jpg 1x, img/form-bg@2x.jpg 2x')
+        img.lazy(src='img/placeholder.jpg', data-srcset='img/form-bg@2x.jpg 2x', data-src='img/form-bg.jpg', alt='Фото цветов')
+      </picture>
       .contact-form__fields
         button.contact-form__close(type='button')
         p Оставьте свой номер и мы вам перезвоним

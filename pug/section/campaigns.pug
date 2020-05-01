@@ -3,7 +3,7 @@ include ../utils/mixins.pug
 section.campaigns
   .campaigns__wrapper
     .campaigns__content
-      h2 Акционные предложения
+      h2.campaigns__title Акционные предложения
       p При заказе свадебного оформления предоставляется скидка на букет невесты и бутоньерку в размере 30%
-      button(id='call-button') заказать оформление
-    +picture("campaigns-bg", "campaigns-bg-tablet", "campaigns-bg-mobile", "Оформление мероприятий", "campaigns__image")
+      button.btn.btn--black.campaigns__btn(id='call-button', aria-label='заказать оформление') заказать оформление
+    +lazyPicture("campaigns-bg", "campaigns-bg--tablet", "campaigns-bg--mobile", "Оформление мероприятий", "campaigns__image")
