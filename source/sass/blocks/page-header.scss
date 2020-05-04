@@ -19,10 +19,15 @@
   height: 47px;
   margin-left: 5px;
 
-  &[href]:hover .page-header__image {
+  &[href]:hover .page-header__image,
+  &[href]:focus .page-header__image {
     stroke: $green;
     color: $green;
-    animation: draw 1.5s ease-in-out;
+
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+
+    animation: draw 1.5s ease-in-out forwards;
   }
 
   &[href]:active .page-header__image {
@@ -30,7 +35,11 @@
     color: $green;
     fill-opacity: 0.5;
     stroke-opacity: 0.5;
-    animation: draw 1.5s ease-in-out;
+
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+
+    animation: draw 1.5s ease-in-out forwards;
   }
 }
 
@@ -51,8 +60,9 @@
   @include forum;
 
   position: relative;
+  z-index: 15;
 
-  width: 60px;
+  width: 80px;
   height: 22px;
   margin-top: 22px;
   padding-left: 38px;
@@ -61,75 +71,119 @@
   line-height: 22px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  text-align: right;
 
-  transition: all 0.25s;
+  transition: transform 0.25s;
 
   cursor: pointer;
+  outline: none;
 
-  &::before {
-    position: absolute;
-    content: "";
-    top: 8px;
-    left: 0;
-
-    display: block;
-    width: 23px;
-    height: 1px;
-
-    background-color: #ffffff;
-
-    box-shadow: 0 6px #ffffff;
-  }
-
-  &:hover {
-    color: $green;
-
-    &::before {
-      background-color: $green;
-
-      box-shadow: 0 6px $green;
-
-      outline: none;
-    }
-  }
-
+  &:hover,
   &:focus {
     color: $green;
-
-    outline: none;
-
-    &::before {
-      background-color: $green;
-
-      box-shadow: 0 6px $green;
-    }
   }
 
   &:active {
-    color: darken($color: $green, $amount: 30%);
+    color: $green;
+    opacity: 0.4;
+  }
 
-    outline: none;
-
-
+  &--open {
     &::before {
-      background-color: darken($color: $green, $amount: 30%);
+      position: absolute;
+      content: "";
+      top: 6px;
+      left: 0;
 
-      box-shadow: 0 6px darken($color: $green, $amount: 30%);
+      display: block;
+      width: 39px;
+      height: 2px;
+
+      background-color: #ffffff;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 15px;
+      left: 0;
+
+      display: block;
+      width: 39px;
+      height: 2px;
+
+      background-color: #ffffff;
+    }
+
+    &:hover,
+    &:focus {
+      &::before,
+      &::after {
+        background-color: $green;
+      }
+    }
+
+    &:active {
+      &::before,
+      &::after {
+        background-color: $green;
+        opacity: 0.4;
+      }
     }
   }
-}
 
-// * Animations
-@keyframes draw {
-  0% {
-    stroke: $blue;
-    stroke-dasharray: 500;
-    stroke-dashoffset: 500;
-  }
+  &--close {
+    font-size: 0;
 
-  100% {
-    stroke: $blue;
-    stroke-dashoffset: 0;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+
+      width: 39px;
+      height: 2px;
+
+      background-color: #ffffff;
+
+      transform-origin: center;
+      transform: rotate(45deg) translate(4px, 11px);
+
+      transition: all 0.25s;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+
+      width: 39px;
+      height: 2px;
+
+      background-color: #ffffff;
+
+      transform-origin: center;
+      transform: rotate(-45deg) translate(-11px, 4px);
+
+      transition: all 0.25s;
+    }
+
+    &:hover,
+    &:focus {
+      &::before,
+      &::after {
+        background-color: $green;
+      }
+    }
+
+    &:active {
+      &::before,
+      &::after {
+        background-color: $green;
+        opacity: 0.4;
+      }
+    }
   }
 }
 
@@ -147,30 +201,28 @@
 
   .page-header__btn {
     width: 35px;
-    height: 10px;
     margin: 0;
     padding: 0;
 
     font-size: 0;
 
-    &::before {
-      top: 0;
-
-      width: 35px;
-
-      box-shadow: 0 10px #ffffff;
-    }
-
-    &:hover,
-    &:focus {
+    &--open {
       &::before {
-        box-shadow: 0 10px $green;
+        width: 35px;
+      }
+
+      &::after {
+        width: 35px;
       }
     }
 
-    &:active {
+    &--close {
       &::before {
-        box-shadow: 0 10px darken($color: $green, $amount: 30%);
+        width: 35px;
+      }
+
+      &::after {
+        width: 35px;
       }
     }
   }
@@ -188,6 +240,8 @@
     top: 0;
     left: 0;
 
+    align-items: center;
+
     width: 100%;
     padding: 15px 9%;
     box-sizing: border-box;
@@ -199,9 +253,7 @@
     width: 86px;
     height: 29px;
   }
-
-  .page-header__btn {
-    margin-top: 10px;
-  }
 }
+
+@import "../base/animation.scss";
 

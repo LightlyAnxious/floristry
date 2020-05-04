@@ -39,6 +39,7 @@
 
   max-width: 249px;
   padding: 66px;
+  margin: 0 auto;
 
   & p {
     margin: 22px 0 19px;
@@ -171,15 +172,25 @@
   }
 }
 
+// ! Планшетная версия
+
 @media (max-width: $tablet-width) {
+  .contact-form {
+    max-width: 550px;
+  }
+
   .contact-form__bg-image {
     display: none;
   }
 }
 
-// ! Планшетная версия
+// ! Мобильная версия
 
 @media (max-width: $mobile-width) {
+  .contact-form {
+    max-width: 320px;
+  }
+
   .contact-form__fields {
     position: relative;
 
@@ -187,7 +198,6 @@
     flex-direction: column;
     align-items: flex-start;
 
-    max-width: unset;
     padding: 66px 6.25%;
 
     & input {

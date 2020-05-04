@@ -2,6 +2,18 @@
   position: relative;
 
   flex-shrink: 0;
+
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+
+    background: linear-gradient(to top, #3b181e, transparent);
+  }
 }
 
 .intro__bg-image {
@@ -15,16 +27,6 @@
 
   object-fit: cover;
   pointer-events: none;
-
-  &::before {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    width: 100%;
-    height: 75px;
-
-    background: linear-gradient(to top, #3b181e, transparent);
-  }
 
   & img {
     width: 100%;
