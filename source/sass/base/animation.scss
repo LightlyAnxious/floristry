@@ -15,3 +15,9 @@
     transform: translateY(0);
   }
 }
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

@@ -29,6 +29,7 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-touch-fd": "github:funkedigital/gulp-touch-fd",
     "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "2.0.0",
     "gulp-webp": "^4.0.1",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",

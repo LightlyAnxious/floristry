@@ -10,6 +10,9 @@
 }
 
 .banner__social-links {
+  position: relative;
+  z-index: 15;
+
   width: 35px;
   margin-top: auto;
   margin-bottom: 63px;
@@ -207,6 +210,8 @@
   }
 
   .banner__social-links {
+    position: static;
+    z-index: 0;
     order: 2;
 
     width: auto;

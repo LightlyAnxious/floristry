@@ -1,7 +1,8 @@
 // * Menu
 .menu {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
 
   width: 90%;
   max-width: 1730px;
@@ -20,18 +21,28 @@
     height: 100%;
   }
 
-  &[href]:hover .menu__image {
-    stroke: $blue;
-    fill: $blue;
-    animation: draw 1.5s ease-in-out;
+  &[href]:hover,
+  &[href]:focus {
+    & .menu__image {
+      stroke: $green;
+      color: $green;
+
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+
+      animation: draw 1.5s ease-in-out forwards;
+    }
   }
 
   &[href]:active .menu__image {
-    stroke: $blue;
-    fill: $blue;
-    fill-opacity: 0.5;
+    stroke: $green;
+    color: $green;
     stroke-opacity: 0.5;
-    animation: draw 1.5s ease-in-out;
+
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+
+    animation: draw 1.5s ease-in-out forwards;
   }
 }
 
@@ -47,28 +58,24 @@
   transition: all 0.25s;
 }
 
-.menu__social-links {
-  align-self: flex-start;
-
-  margin-top: 529px;
-  width: 34px;
-}
-
 .menu__container {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  width: 100%;
+  max-width: 440px;
 }
 
 .menu__list {
   @include list-reset;
 
-  width: 450px;
-  padding: 120px 0 70px;
+  width: 100%;
+  padding: 10vh 0 7vh;
 }
 
 .menu__item {
-  min-height: 150px;
+  min-height: 13.5vh;
   margin-bottom: 20px;
 
   text-align: center;
@@ -109,83 +116,6 @@
   }
 }
 
-.menu__btn {
-  @include button-reset;
-
-  position: relative;
-
-  width: 28px;
-  height: 28px;
-  margin: 12px 2px;
-
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-
-    width: 39px;
-    height: 2px;
-
-    background-color: #ffffff;
-
-    transform-origin: center;
-    transform: rotate(45deg) translate(4px, 11px);
-
-    transition: all 0.25s;
-  }
-
-  &::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-
-    width: 39px;
-    height: 2px;
-
-    background-color: #ffffff;
-
-    transform-origin: center;
-    transform: rotate(-45deg) translate(-11px, 4px);
-
-    transition: all 0.25s;
-  }
-
-  &:hover,
-  &:focus {
-    outline: none;
-
-    &::before {
-      background-color: $green;
-
-      transform: rotate(45deg) translate(4px, 11px) scale(1.03);
-    }
-
-    &::after {
-      background-color: $green;
-
-      transform: rotate(-45deg) translate(-11px, 4px) scale(1.03);
-    }
-  }
-
-  &:active {
-    outline: none;
-
-    &::before {
-      background-color: darken($color: $green, $amount: 30%);
-
-      transform: rotate(45deg) translate(4px, 11px) scale(0.98);
-    }
-
-    &::after {
-      background-color: darken($color: $green, $amount: 30%);
-
-      transform: rotate(-45deg) translate(-11px, 4px) scale(0.98);
-    }
-  }
-}
-
 // ! Планшетная версия
 
 @media (max-width: $tablet-width) {
@@ -197,12 +127,9 @@
     padding: 40px;
   }
 
-  .menu__social-links {
-    display: none;
-  }
-
   .menu__container {
-    order: 2;
+    padding-right: 0;
+    padding-top: 5vh;
   }
 
   .menu__logo {
@@ -211,27 +138,12 @@
     margin-top: 50px;
   }
 
-  .menu__btn {
-    order: 1;
-    width: 21px;
-    height: 21px;
-    margin: 0 0 0 auto;
-
-    &::before {
-      width: 27px;
-    }
-
-    &::after {
-      width: 27px;
-    }
-  }
-
   .menu__list {
-    padding: 50px 0 30px;
+    padding: 8vh 0 3vh;
   }
 
   .menu__item {
-    min-height: 120px;
+    min-height: 12vh;
     margin-bottom: 20px;
   }
 
@@ -256,6 +168,8 @@
 
   .menu__container {
     order: 2;
+
+    padding-top: 10vh;
   }
 
   .menu__logo {
@@ -265,22 +179,9 @@
     margin-bottom: 30px;
   }
 
-  .menu__btn {
-    position: absolute;
-    top: 24px;
-    right: 2%;
-
-    width: 21px;
-    height: 21px;
-    margin: 0;
-
-    &::before {
-      width: 27px;
-    }
-
-    &::after {
-      width: 27px;
-    }
+  .menu__list {
+    width: unset;
+    padding: 8vh 0 3vh;
   }
 
   .menu__item {
@@ -309,3 +210,5 @@
     display: none;
   }
 }
+
+@import "../base/animation.scss";

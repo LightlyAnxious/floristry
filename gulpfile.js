@@ -18,8 +18,7 @@ var svgstore = require("gulp-svgstore")
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
-var uglify = require("gulp-uglify");
-var concat = require("gulp-concat");
+var uglify = require("gulp-uglify-es").default;
 var pug = require("gulp-pug");
 var prettyHtml = require("gulp-pretty-html");
 var touch = require("gulp-touch-fd");
@@ -28,6 +27,20 @@ function onError(err) {
   console.log(err);
   this.emit('end');
 }
+
+gulp.task("uglify", function () {
+  return (
+    gulp
+      .src("source/js/*.js")
+      .pipe(sourcemap.init())
+      .pipe(uglify())
+      .pipe(rename({ suffix: ".min" }))
+      .pipe(sourcemap.write()) // Inline source maps.
+      // For external source map file:
+      //.pipe(sourcemaps.write("./maps")) // In this case: lib/maps/bundle.min.js.map
+      .pipe(gulp.dest("build/js"))
+  );
+});
 
 gulp.task("views", function buildHTML() {
   return gulp
@@ -94,16 +107,6 @@ gulp.task("server", function () {
 gulp.task("refresh", function (done) {
   server.reload();
   done();
-});
-
-gulp.task('js', function() {
-  return gulp.src(["source/js/vendor.js", "source/js/main.js"])
-    // .pipe(concat('main.js'))
-    .pipe(uglify())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('build/js'));
 });
 
 gulp.task("jscopy", function () {
@@ -193,5 +196,5 @@ gulp.task("clean", function() {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "sprite", "images", "webp", "views", "copy", "css", "html"));
+gulp.task("build", gulp.series("clean", "sprite", "images", "webp", "views", "uglify", "copy", "css", "html"));
 gulp.task("start", gulp.series("views", "html", "css", "server"));

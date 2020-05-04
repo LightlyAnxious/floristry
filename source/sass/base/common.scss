@@ -94,7 +94,8 @@ img {
 
     background-color: #ffffff;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: #ffffff;
 
       background-color: #000000;
@@ -118,7 +119,8 @@ img {
     background-color: #000000;
     outline: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: #000000;
 
       background-color: #ffffff;
@@ -147,7 +149,7 @@ img {
 
   background: $brown;
 
-  &.open {
+  &--shown {
     display: block;
     width: 100vw;
     height: 100vh;
