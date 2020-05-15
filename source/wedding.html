@@ -28,6 +28,7 @@
                 <li class="menu__item"><a class="menu__link" href="events.html" aria-label="Букеты на любые &lt;br&gt; мероприятия">Букеты на любые мероприятия</a></li>
                 <li class="menu__item"><a class="menu__link" href="compositions.html" aria-label="Композиции">Композиции</a></li>
                 <li class="menu__item"><a class="menu__link" href="decoration.html" aria-label="Оформление мероприятий">Оформление <br> мероприятий</a></li>
+                <li class="menu__item"><a class="menu__link" href="gallery.html" aria-label="Галерея">Галерея</a></li>
               </ul><span class="visually-hidden">закрыть меню</span>
             </div>
           </nav>
@@ -180,14 +181,13 @@
       </div>
     </div>
   </footer>
-  <section class="contact-form modal" aria-hidden>
+  <section class="contact-form modal" aria-hidden="true">
     <h2 class="visually-hidden">Свяжитесь с нами</h2>
     <form id="contact-form" action="#" method="post">
       <div class="contact-form__wrapper">
         <picture class="contact-form__bg-image">
-          <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/form-bg.webp 1x, img/form-bg@2x.webp 2x">
-          <source media="(min-width: 1140px)" data-srcset="img/form-bg.jpg 1x, img/form-bg@2x.jpg 2x"><img class="lazy" src="img/placeholder.jpg" data-srcset="img/form-bg@2x.jpg 2x" data-src="img/form-bg.jpg" alt="Фото цветов">
-        </picture>
+          <source media="(min-width: 1140px)" type="image/webp" srcset="img/placeholder.jpg" data-srcset="img/form-bg.webp 1x, img/form-bg@2x.webp 2x">
+          <source media="(min-width: 1140px)" srcset="img/placeholder.jpg" data-srcset="img/form-bg.jpg 1x, img/form-bg@2x.jpg 2x"><img class="lazy" src="img/placeholder.jpg" srcset="img/placeholder.jpg" data-srcset="img/form-bg@2x.jpg 2x" data-src="img/form-bg.jpg" alt="Фото цветов">
         </picture>
         <div class="contact-form__fields">
           <button class="contact-form__close" type="button" tabindex="1"></button>
@@ -201,7 +201,7 @@
       </div>
     </form>
   </section>
-  <div class="modal-overlay" aria-hidden></div>
+  <div class="modal-overlay" aria-hidden="true"></div>
   <script src="js/vendor.min.js" defer></script>
   <script src="js/main.min.js" defer></script>
 </body>

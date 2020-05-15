@@ -1,6 +1,6 @@
 header.page-header
-  .page-header__wrapper
-    a.page-header__logo
+  .page-header__wrapper(class= headerClass)
+    a.page-header__logo(href=(headerHref ? headerHref : false))
       svg.page-header__image
         use(xlink:href='img/sprite_auto.svg#logo')
     .menu-overlay
