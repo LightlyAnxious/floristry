@@ -54,6 +54,7 @@
     color: $green;
 
     transform: scale(1.03);
+    outline: none;
 
     &--whatsapp {
       color: $green;
@@ -63,8 +64,8 @@
 
   &:active {
     outline: none;
-    stroke: darken($color: $green, $amount: 30%);
-    color: darken($color: $green, $amount: 30%);
+    stroke-opacity: 0.4;
+    color: rgba($color: $green, $alpha: 0.4);
 
     transform: scale(0.98);
   }

@@ -1,0 +1,295 @@
+.banner__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: 90.1%;
+  max-width: 1735px;
+  margin: 0 auto;
+  padding: 105px 2% 90px;
+}
+
+.banner__social-links {
+  position: relative;
+  z-index: 15;
+
+  width: 35px;
+  margin-top: auto;
+  margin-bottom: 63px;
+}
+
+.banner__promo {
+  display: flex;
+  flex-direction: column;
+  width: 820px;
+  align-items: center;
+
+  & strong {
+    display: inline-block;
+    margin-bottom: 84px;
+
+    font-size: 120px;
+    line-height: 132px;
+    text-align: center;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    // color: red ;
+  }
+}
+
+.banner__btn {
+  @include press;
+
+  display: inline-block;
+  padding: 17px 38px;
+  margin-bottom: 157px;
+  border: 1px solid #ffffff;
+
+  font-size: 12px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  &:hover {
+    border-color: #ffffff;
+
+    color: #000000;
+
+    background: #ffffff;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.banner__mouse-link {
+  color: unset;
+
+  & svg {
+    fill: none;
+    stroke: #ffffff;
+
+    transition: stroke 0.25s ease-in-out, fill 0.25s ease-in-out;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    & svg {
+      stroke: #000000;
+      fill-opacity: 1;
+      stroke-opacity: 1;
+    }
+
+    & rect {
+      fill: #ffffff;
+    }
+  }
+
+  &:active {
+    & svg {
+      stroke: #000000;
+      fill-opacity: 0.4;
+      stroke-opacity: 0.4;
+    }
+
+    & rect {
+      fill: #ffffff;
+    }
+  }
+
+  & .wheel {
+    animation: var(--scroll);
+  }
+}
+
+// * Scroll down
+.banner__scroll {
+  @include press;
+
+  position: relative;
+
+  width: 23px;
+  height: 165px;
+  margin-top: auto;
+  margin-bottom: 89px;
+
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+
+  transition: all 0.25s;
+
+  cursor: pointer;
+
+  & span {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+    width: 212px;
+    height: 23px;
+    transform-origin: left top;
+    transform: rotate(90deg) translateY(-100%);
+  }
+
+  &:hover,
+  &:focus {
+    color: $green;
+    outline: none;
+
+    & .banner__arrow {
+      stroke: $green;
+    }
+  }
+
+  &:active {
+    color: $green;
+
+    outline: none;
+    opacity: 0.4;
+
+    & .banner__arrow {
+      stroke: $green;
+
+      stroke-opacity: 0.4;
+    }
+  }
+}
+
+.banner__arrow {
+  position: absolute;
+  bottom: -45px;
+  left: 3px;
+
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+
+  transition: all 0.25 ease-in-out;
+  animation: var(--scroll);
+}
+
+// ! Планшетная версия
+
+@media (max-width: $tablet-width) {
+  .banner__wrapper {
+    flex-direction: column;
+    align-items: center;
+
+    width: 87%;
+    padding: 85px 1.45% 55px;
+  }
+
+  .banner__promo {
+    order: 1;
+
+    width: 84%;
+
+    & strong {
+      font-size: 70px;
+      line-height: 77px;
+    }
+  }
+
+  .banner__btn {
+    padding: 20px 52px;
+    margin-bottom: 212px;
+
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.15em;
+  }
+
+  .banner__social-links {
+    position: static;
+    z-index: 0;
+    order: 2;
+
+    width: auto;
+    margin-bottom: 35px;
+  }
+
+  .banner__scroll {
+    order: 3;
+
+    width: 39px;
+    height: 44px;
+    margin: 0;
+
+    font-size: 0;
+
+    & span {
+      display: none;
+    }
+  }
+
+  .banner__mouse-link {
+    display: none;
+  }
+
+  .banner__arrow {
+    top: 0;
+
+    width: 30px;
+    height: 40px;
+  }
+}
+
+// ! Мобильная версия
+
+@media (max-width: $mobile-width) {
+  .banner__wrapper {
+    width: 81.25%;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 9% 40px;
+  }
+
+  .banner__promo {
+    order: 1;
+
+    width: 91.53%;
+
+    & strong {
+      margin-bottom: 35px;
+      max-width: 235px;
+
+      font-size: 30px;
+      line-height: 140%;
+    }
+  }
+
+  .banner__btn {
+    padding: 18px 30px;
+    margin-bottom: 70px;
+
+    font-size: 10px;
+    line-height: 11px;
+    letter-spacing: 0.15em;
+  }
+
+  .banner__social-links {
+    margin-bottom: 25px;
+  }
+
+  .banner__scroll {
+    width: 12px;
+    height: 21px;
+    margin-bottom: 40px;
+  }
+
+  .banner__arrow {
+    width: 15px;
+    height: 20px;
+  }
+}

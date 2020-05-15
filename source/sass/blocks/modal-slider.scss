@@ -1,0 +1,101 @@
+.modal-slider {
+  width: 80vw;
+  height: 80vh;
+
+  background-color: rgba($color: #000000, $alpha: 0.8);
+}
+
+.modal-slider__wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-slider__close-btn {
+  @include button-reset;
+
+  position: absolute;
+  z-index: 100;
+  top: 24px;
+  right: 24px;
+
+  align-self: flex-end;
+
+  width: 22px;
+  height: 22px;
+
+  transition: all 0.25s;
+
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+
+    width: 31px;
+    height: 2px;
+
+    background-color: #ffffff;
+
+    transition: all 0.25s;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: center;
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: center;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      background-color: $green;
+
+      transform: translate(-50%, -50%) rotate(45deg) scale(1.03);
+      transform-origin: center;
+    }
+
+    &::after {
+      background-color: $green;
+
+      transform: translate(-50%, -50%) rotate(-45deg) scale(1.03);
+      transform-origin: center;
+    }
+  }
+
+  &:active {
+    &::before,
+    &::after {
+      background-color: darken($color: $green, $amount: 30%);
+    }
+  }
+}
+
+.modal-slider__list {
+  @include list-reset;
+}
+
+.modal-slider__item {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-slider__picture {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  & img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
+}

@@ -1,0 +1,18 @@
+include ../utils/mixins.pug
+
+- var servicesArr = [{link: "wedding.html", img: "feature-1", text: "букет невесты и свадебное оформление", number: "01", mod: "bride"}, {link: "events.html", img: "feature-2", text: "букеты на торжества", number: "02", mod: "celebration"}, {link: "compositions.html", img: "feature-3", text: "композиции", number: "03", mod: "compositions"}, {link: "decoration.html", img: "feature-4", text: "оформление мероприятий", number: "04", mod: "decor"}]
+
+section.services#services
+  .services-wrapper
+    span.services__bg-title Каталог услуг
+    .services__list.swiper-container.swiper1
+      h2.services__title Каталог услуг
+      ul.swiper-wrapper
+        for slide, index in servicesArr
+          li.swiper-slide.services__slide
+            +picture(slide.img, slide.img, slide.img + '--mobile', slide.text, "services__slide-img")
+            a.services__link(href= slide.link, class="services__link--" + slide.mod)
+              span.services__index= slide.number
+              p= slide.text
+              strong.services__button Смотреть работы
+      .services__pagination.swiper-pagination

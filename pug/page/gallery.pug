@@ -1,0 +1,31 @@
+- let image = {name: "gallery-img-", alt: "Наши работы "}
+- let quantity = 57
+- let title = "Наши работы"
+- let headerClass = "gallery__header-wrap"
+- let headerHref = "index.html"
+
+include ../utils/mixins.pug
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='Весна Всегда, флористика и оформление мероприятий')
+    title #{title}
+    link(rel='stylesheet preload', href='css/style.min.css', as='style')
+  body
+    section.gallery
+      include ../section/header.pug
+      h1.gallery__title Наши работы
+      .gallery__inner
+        ul.gallery__list.grid
+          li.grid-sizer
+          - for (let i = 1; i <= quantity; i++)
+            li.gallery__item.grid-item.lazy(class= "grid-item--width" + i)
+              +lazyModalSlide(null, null, image.name + i + "--mobile", image.alt)
+    include ../section/footer.pug
+    include ../section/modal-slider.pug
+    include ../section/templates.pug
+    script(src='js/vendor.min.js', defer)
+    script(src='js/main.min.js', defer)
