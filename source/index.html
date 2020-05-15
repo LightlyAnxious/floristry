@@ -3,8 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" maximum-scale="1.0" user-scalable="0" shrink-to-fit="no">
-  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Весна Всегда, флористика и оформление мероприятий">
   <title>Весна Всегда, флористика с душой</title>
   <link rel="stylesheet preload" href="css/style.min.css" as="style">
@@ -35,6 +34,7 @@
                 <li class="menu__item"><a class="menu__link" href="events.html" aria-label="Букеты на любые &lt;br&gt; мероприятия">Букеты на любые мероприятия</a></li>
                 <li class="menu__item"><a class="menu__link" href="compositions.html" aria-label="Композиции">Композиции</a></li>
                 <li class="menu__item"><a class="menu__link" href="decoration.html" aria-label="Оформление мероприятий">Оформление <br> мероприятий</a></li>
+                <li class="menu__item"><a class="menu__link" href="gallery.html" aria-label="Галерея">Галерея</a></li>
               </ul><span class="visually-hidden">закрыть меню</span>
             </div>
           </nav>
@@ -140,22 +140,21 @@
           <button class="btn btn--black campaigns__btn" id="call-button" aria-label="заказать оформление">заказать оформление</button>
         </div>
         <picture class="campaigns__image">
-          <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/campaigns-bg.webp 1x, img/campaigns-bg@2x.webp 2x">
-          <source media="(min-width: 720px)" type="image/webp" data-srcset="img/campaigns-bg--tablet.webp 1x, img/campaigns-bg--tablet@2x.webp 2x">
-          <source type="image/webp" data-srcset="img/campaigns-bg--mobile.webp 1x, img/campaigns-bg--mobile@2x.webp 2x">
-          <source media="(min-width: 1140px)" data-srcset="img/campaigns-bg.jpg 1x, img/campaigns-bg@2x.jpg 2x">
-          <source media="(min-width: 720px)" data-srcset="img/campaigns-bg--tablet.jpg 1x, img/campaigns-bg--tablet@2x.jpg 2x"><img class="lazy" src="img/placeholder.jpg" data-srcset="img/campaigns-bg--mobile@2x.jpg 2x" data-src="img/campaigns-bg--mobile.jpg" alt="Оформление мероприятий">
+          <source media="(min-width: 1140px)" type="image/webp" srcset="img/placeholder.jpg" data-srcset="img/campaigns-bg.webp 1x, img/campaigns-bg@2x.webp 2x">
+          <source media="(min-width: 720px)" type="image/webp" srcset="img/placeholder.jpg" data-srcset="img/campaigns-bg--tablet.webp 1x, img/campaigns-bg--tablet@2x.webp 2x">
+          <source type="image/webp" srcset="img/placeholder.jpg" data-srcset="img/campaigns-bg--mobile.webp 1x, img/campaigns-bg--mobile@2x.webp 2x">
+          <source media="(min-width: 1140px)" srcset="img/placeholder.jpg" data-srcset="img/campaigns-bg.jpg 1x, img/campaigns-bg@2x.jpg 2x">
+          <source media="(min-width: 720px)" srcset="img/placeholder.jpg" data-srcset="img/campaigns-bg--tablet.jpg 1x, img/campaigns-bg--tablet@2x.jpg 2x"><img class="lazy" src="img/placeholder.jpg" srcset="img/placeholder.jpg" data-srcset="img/campaigns-bg--mobile@2x.jpg 2x" data-src="img/campaigns-bg--mobile.jpg" alt="Оформление мероприятий">
         </picture>
       </div>
     </section>
-    <section class="contact-form modal" aria-hidden>
+    <section class="contact-form modal" aria-hidden="true">
       <h2 class="visually-hidden">Свяжитесь с нами</h2>
       <form id="contact-form" action="#" method="post">
         <div class="contact-form__wrapper">
           <picture class="contact-form__bg-image">
-            <source media="(min-width: 1140px)" type="image/webp" data-srcset="img/form-bg.webp 1x, img/form-bg@2x.webp 2x">
-            <source media="(min-width: 1140px)" data-srcset="img/form-bg.jpg 1x, img/form-bg@2x.jpg 2x"><img class="lazy" src="img/placeholder.jpg" data-srcset="img/form-bg@2x.jpg 2x" data-src="img/form-bg.jpg" alt="Фото цветов">
-          </picture>
+            <source media="(min-width: 1140px)" type="image/webp" srcset="img/placeholder.jpg" data-srcset="img/form-bg.webp 1x, img/form-bg@2x.webp 2x">
+            <source media="(min-width: 1140px)" srcset="img/placeholder.jpg" data-srcset="img/form-bg.jpg 1x, img/form-bg@2x.jpg 2x"><img class="lazy" src="img/placeholder.jpg" srcset="img/placeholder.jpg" data-srcset="img/form-bg@2x.jpg 2x" data-src="img/form-bg.jpg" alt="Фото цветов">
           </picture>
           <div class="contact-form__fields">
             <button class="contact-form__close" type="button" tabindex="1"></button>
@@ -169,7 +168,7 @@
         </div>
       </form>
     </section>
-    <div class="modal-overlay" aria-hidden></div>
+    <div class="modal-overlay" aria-hidden="true"></div>
   </main>
   <footer class="page-footer">
     <div class="page-footer__wrapper">

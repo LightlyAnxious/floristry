@@ -496,6 +496,12 @@ button.swiper-pagination-bullet {
     height: 100%;
   }
 
+  .swiper3 {
+    & .swiper-slide {
+      max-width: unset;
+    }
+  }
+
   .swiper-container-horizontal>.swiper-pagination-bullets,
   .swiper-pagination-custom,
   .swiper-pagination-fraction {
