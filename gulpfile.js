@@ -3,7 +3,7 @@
 var gulp = require("gulp");
 var plumber = require("gulp-plumber");
 var sourcemap = require("gulp-sourcemaps");
-var sass = require("gulp-sass");
+var sass = require("gulp-dart-sass");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
@@ -18,22 +18,48 @@ var svgstore = require("gulp-svgstore")
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
-var uglify = require("gulp-uglify");
-var concat = require("gulp-concat");
+var uglify = require("gulp-uglify-es").default;
 var pug = require("gulp-pug");
+var prettyHtml = require("gulp-pretty-html");
+var touch = require("gulp-touch-fd");
 
 function onError(err) {
   console.log(err);
   this.emit('end');
 }
 
+gulp.task("uglify", function () {
+  return (
+    gulp
+      .src("source/js/*.js")
+      .pipe(sourcemap.init())
+      .pipe(uglify())
+      .pipe(rename({ suffix: ".min" }))
+      .pipe(sourcemap.write()) // Inline source maps.
+      // For external source map file:
+      //.pipe(sourcemaps.write("./maps")) // In this case: lib/maps/bundle.min.js.map
+      .pipe(gulp.dest("build/js"))
+  );
+});
+
 gulp.task("views", function buildHTML() {
-  return gulp.src('pug/*.+(jade|pug)')
+  return gulp
+    .src("pug/page/*.+(jade|pug)")
     .pipe(plumber(onError))
-    .pipe(pug({
-      pretty: '\t'
-    }))
-    .pipe(gulp.dest('source'))
+    .pipe(
+      pug({
+        pretty: "\t",
+      })
+    )
+    .pipe(
+      prettyHtml({
+        indent_size: 2,
+        indent_char: " ",
+        unformatted: ["code", "pre", "em", "strong", "span", "i", "b", "br"],
+        end_with_newline: true,
+      })
+    )
+    .pipe(gulp.dest("source"));
 });
 
 gulp.task("css", function() {
@@ -48,68 +74,74 @@ gulp.task("css", function() {
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
+    .pipe(touch())
     .pipe(server.stream());
 });
 
-gulp.task('js', function() {
-  return gulp.src(["source/js/vendor.js", "source/js/main.js"])
-    // .pipe(concat('main.js'))
-    .pipe(uglify())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('build/js'));
-});
-
-gulp.task("server", function() {
+gulp.task("server", function () {
   server.init({
     server: "build/",
+    injectChanges: true,
+    middleware: [
+      require("compression")(),
+      {
+        route: "/api", // per-route
+        handle: function (req, res, next) {
+          // handle any requests at /api
+        },
+      },
+    ],
     notify: false,
     open: true,
     cors: true,
-    ui: false
+    ui: false,
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
   gulp.watch("pug/**/*.pug", gulp.series("views"));
   gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
-  gulp.watch("../**/*.html", gulp.series("html", "refresh"));
+  gulp.watch("source/*.html", gulp.series("html", "refresh"));
+  gulp.watch("source/js/**/*.js", gulp.series("jscopy", "refresh"));
 });
 
-gulp.task("refresh", function(done) {
+gulp.task("refresh", function (done) {
   server.reload();
   done();
 });
 
-gulp.task("images", function() {
-  return gulp.src([
-      'source/img/**/*.{png,jpg,svg}',
-      '!source/img/**/_*/**/*'
-    ])
-    .pipe(imagemin([
-      pngquant({
-        speed: 1,
-        quality: 90
-      }),
-      zopfli({
-        more: true
-      }),
-      imagemin.svgo({
-        plugins: [{
-          removeViewBox: false
-        }]
-      }),
-      imagemin.jpegtran({
-        progressive: true
-      }),
-      mozjpeg({
-        quality: 90
-      })
-      // imagemin.svgo()
-    ]))
+gulp.task("jscopy", function () {
+  return gulp.src("source/js/**/*.js").pipe(gulp.dest("build/js"));
+});
+
+gulp.task("images", function () {
+  return gulp
+    .src(["source/img/**/*.{png,jpg,svg}", "!source/img/**/_*/**/*"])
+    .pipe(
+      imagemin([
+        pngquant({
+          speed: 1,
+          quality: [0.8, 0.9],
+        }),
+        zopfli({
+          more: true,
+        }),
+        imagemin.svgo({
+          plugins: [
+            {
+              removeViewBox: false,
+            },
+          ],
+        }),
+        imagemin.jpegtran({
+          progressive: true,
+        }),
+        mozjpeg({
+          quality: 90,
+        }),
+      ])
+    )
 
     .pipe(gulp.dest("build/img"));
-
 });
 
 gulp.task("webp", function() {
@@ -144,14 +176,19 @@ gulp.task("html", function() {
 });
 
 gulp.task("copy", function() {
-  return gulp.src([
-      "source/fonts/**/*.{woff,woff2}",
-      // "source/img/**",
-      "source/js/**",
-      "source//*.ico"
-    ], {
-      base: "source"
-    })
+  return gulp
+    .src(
+      [
+        "source/fonts/**/*.{woff,woff2}",
+        // "source/img/**",
+        "source/img/**/*.svg",
+        "source/js/**",
+        "source//*.ico",
+      ],
+      {
+        base: "source",
+      }
+    )
     .pipe(gulp.dest("build"));
 });
 
@@ -159,5 +196,5 @@ gulp.task("clean", function() {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "sprite", "images", "webp", "views", "copy", "css", "html"));
+gulp.task("build", gulp.series("clean", "sprite", "images", "webp", "views", "uglify", "copy", "css", "html"));
 gulp.task("start", gulp.series("views", "html", "css", "server"));

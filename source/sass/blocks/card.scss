@@ -1,0 +1,430 @@
+.card__wrapper {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.card__bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 51.875%;
+  height: 100%;
+  display: block;
+
+  & img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+
+.card__content {
+  align-self: stretch;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  width: 37.23%;
+  min-height: 841px;
+  padding: 32px 5% 45px 0;
+}
+
+.card__inner {
+  order: 1;
+
+  & p {
+    width: 100%;
+    max-width: 572px;
+    margin: 0 auto 30px 0;
+
+    font-size: 18px;
+    line-height: 150%;
+  }
+}
+
+.card__title {
+  display: inline-flex;
+  align-items: flex-end;
+
+  width: 100%;
+  min-height: 165px;
+  max-width: 365px;
+  margin: 0 auto 50px 0;
+
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.card__btn {
+  width: 135px;
+  margin: 0 0 100px 0;
+}
+
+.card__slider {
+  position: relative;
+
+  order: 2;
+
+  width: 92.6%;
+  max-width: 552px;
+
+  & ul {
+    @include list-reset;
+  }
+}
+
+.card__slide {
+  height: 123px;
+}
+
+.card__slide-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  & img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+
+.card__controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+
+  width: 100%;
+  height: 100%;
+}
+
+.card__control {
+  @include button-reset;
+
+  position: absolute;
+  content: "";
+  z-index: 3;
+
+  width: 46px;
+  height: 46px;
+  background-origin: border-box;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+
+  background-color: rgba($color: #000000, $alpha: 0.4);
+
+  transform: translate(-50%, -50%);
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: #ffffff;
+
+    outline: none;
+  }
+
+  &:active {
+    background-color: #ffffff;
+
+    outline: none;
+    opacity: 0.4;
+  }
+
+  &--prev {
+    top: 50%;
+    left: 0;
+
+    display: none;
+
+    &::before,
+    &::after {
+      @include center;
+
+      width: 5.5px;
+      height: 1px;
+
+      background-color: #ffffff;
+
+      transform-origin: left;
+    }
+
+    &::before {
+      transform: translate(-40%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-40%, -50%) rotate(-45deg);
+    }
+  }
+
+  &--next {
+    top: 50%;
+    left: 100%;
+
+    &::before,
+    &::after {
+      @include center;
+
+      width: 5.5px;
+      height: 1px;
+
+      background-color: #ffffff;
+
+      transform-origin: right;
+    }
+
+    &::before {
+      transform: translate(-40%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-40%, -50%) rotate(-45deg);
+    }
+  }
+
+  &--prev,
+  &--next {
+    transition: all 0.25s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: #ffffff;
+
+      &::before,
+      &::after {
+        background-color: #000000;
+      }
+    }
+  }
+}
+
+.card__social-link {
+  align-self: flex-end;
+  order: 3;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  margin: auto 0 0 0;
+
+  font-size: 18px;
+  line-height: 150%;
+  color: #ffffff;
+
+  transition: all 0.25s ease-in-out;
+
+  & span {
+    margin-right: 29px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $green;
+
+    outline: none;
+
+    & .card__icon {
+      stroke: $green;
+      color: $green;
+
+      transform: scale(1.03);
+    }
+  }
+
+  &:active {
+    color: $green;
+
+    opacity: 0.4;
+    outline: none;
+
+    & .card__icon {
+      outline: none;
+      stroke-opacity: 0.4;
+      color: rgba($color: $green, $alpha: 0.4);
+
+      transform: scale(0.98);
+    }
+  }
+}
+
+.card__icon {
+  width: 16px;
+  height: 16px;
+
+  fill: none;
+  stroke: #ffffff;
+  color: #ffffff;
+
+  transition: all 0.25s ease-in-out;
+}
+
+@media (max-width: 1530px) {
+  .card__content {
+    & br {
+      display: none;
+    }
+  }
+}
+
+// ! планшетная версия
+
+@media (max-width: $tablet-width) {
+  .card__wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card__bg-image {
+    position: static;
+
+    width: 100%;
+    height: 518px;
+  }
+
+  .card__content {
+    width: 100%;
+    max-width: 668px;
+    min-height: unset;
+    box-sizing: content-box;
+    padding: 30px 6.5%;
+    margin: 0 auto;
+
+    & br {
+      display: block;
+    }
+  }
+
+  .card__slider {
+    order: 1;
+
+    width: 97.15%;
+    max-width: 649px;
+
+    height: 145px;
+    margin: 0 auto 70px;
+  }
+
+  .card__slide {
+    width: 145px;
+    height: 145px;
+  }
+
+  .card__controls {
+    display: none;
+  }
+
+  .card__inner {
+    & p {
+      width: 100%;
+      max-width: unset;
+      margin: 0 0 35px 0;
+
+      font-size: 20px;
+      line-height: 120%;
+    }
+  }
+
+  .card__title {
+    width: 100%;
+    max-width: unset;
+    min-height: unset;
+    justify-self: flex-start;
+    margin-bottom: 30px;
+
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 0.09em;
+  }
+
+  .card__btn {
+    width: 25.2%;
+    padding: 22px 30px;
+    margin-bottom: 40px;
+
+    font-size: 15px;
+    line-height: 17px;
+  }
+
+  .card__social-link {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .card__bg-image {
+    height: 443px;
+  }
+
+  .card__content {
+    padding: 30px 0 45px;
+    max-width: unset;
+    box-sizing: border-box;
+  }
+
+  .card__slider {
+    order: 2;
+    width: 87.5%;
+    padding: 0 6.25%;
+    margin-bottom: 0;
+  }
+
+  .card__slide {
+    width: 75px;
+    height: 75px;
+  }
+
+  .card__inner {
+    order: 1;
+    box-sizing: border-box;
+    padding: 0 6.25%;
+
+    & p {
+      margin-bottom: 40px;
+
+      font-size: 18px;
+      line-height: 123%;
+    }
+  }
+
+  .card__title {
+    width: 70%;
+    margin-bottom: 33px;
+
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .card__btn {
+    width: 42.5%;
+    padding: 15px 30px;
+    margin-bottom: 50px;
+
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+@media (max-width: 384px) {
+  .card__slider {
+    width: 100%;
+    max-width: unset;
+    height: 76px;
+    box-sizing: border-box;
+    padding: 0 0 0 6.25%;
+  }
+}

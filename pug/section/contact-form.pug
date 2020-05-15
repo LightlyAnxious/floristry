@@ -1,0 +1,19 @@
+include ../utils/mixins.pug
+
+section.contact-form.modal(aria-hidden= 'true')
+  h2.visually-hidden Свяжитесь с нами
+  form#contact-form(action='#', method='post')
+    .contact-form__wrapper
+      picture.contact-form__bg-image
+        source(media='(min-width: 1140px)', type='image/webp', srcset='img/placeholder.jpg', data-srcset='img/form-bg.webp 1x, img/form-bg@2x.webp 2x')
+        source(media='(min-width: 1140px)', srcset='img/placeholder.jpg', data-srcset='img/form-bg.jpg 1x, img/form-bg@2x.jpg 2x')
+        img.lazy(src='img/placeholder.jpg', srcset='img/placeholder.jpg', data-srcset='img/form-bg@2x.jpg 2x', data-src='img/form-bg.jpg', alt='Фото цветов')
+      .contact-form__fields
+        button.contact-form__close(type='button', tabindex='1')
+        p Оставьте свой номер и мы вам перезвоним
+        label.sr-only(for='name') Имя
+        input(type='text', id='name', name='name', value='', placeholder='Имя', tabindex='1', required)
+        label.sr-only(for='phone') Телефон
+        input(type='tel', id='phone', name='phone', pattern='\+?[0-9\s\-\(\)]+', value='', placeholder='Телефон', required, tabindex='1')
+        button.contact-form__submit.btn.btn--white(type='submit', tabindex='1') Позвоните мне
+.modal-overlay(aria-hidden= 'true')

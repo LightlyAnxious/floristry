@@ -1,0 +1,24 @@
+.container {
+  position: relative;
+
+  width: 90.1%;
+  max-width: 1735px;
+  margin: 0 auto;
+  padding: 0 2%;
+  box-sizing: border-box;
+}
+
+@media (max-width: $tablet-width) {
+  .container {
+    width: 87%;
+    padding: 0 1.45%;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .container {
+    width: 100%;
+    padding: 15px 9%;
+    box-sizing: border-box;
+  }
+}

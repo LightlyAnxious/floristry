@@ -1,0 +1,47 @@
+include variables.pug
+
+mixin picture(desktopImg, tabletImg, mobileImg, altText, className)
+  picture(class=className)
+    source(media=desktop, type='image/webp', srcset=('img/' + desktopImg + '.webp 1x, ' + 'img/' + desktopImg + '@2x.webp 2x'))
+    if tabletImg
+      source(media=tablet, type='image/webp', srcset=('img/' + tabletImg + '.webp 1x, ' + 'img/' + tabletImg + '@2x.webp 2x'))
+    source(type='image/webp', srcset=('img/' + mobileImg + '.webp 1x, ' + 'img/' + mobileImg + '@2x.webp 2x'))
+    source(media=desktop, srcset=('img/' + desktopImg + '.jpg 1x, ' + 'img/' + desktopImg + '@2x.jpg 2x'))
+    if tabletImg
+      source(media=tablet, srcset=('img/' + tabletImg + '.jpg 1x, ' + 'img/' + tabletImg + '@2x.jpg 2x'))
+    img(src=('img/' + mobileImg + '.jpg'), srcset=('img/' + mobileImg + '@2x.jpg 2x'), alt=altText)
+
+mixin lazyPicture(desktopImg, tabletImg, mobileImg, altText, className)
+  picture(class=className)
+    source(media=desktop, type='image/webp', srcset='img/placeholder.jpg', data-srcset=('img/' + desktopImg + '.webp 1x, ' + 'img/' + desktopImg + '@2x.webp 2x'))
+    source(media=tablet, type='image/webp', srcset='img/placeholder.jpg', data-srcset=('img/' + tabletImg + '.webp 1x, ' + 'img/' + tabletImg + '@2x.webp 2x'))
+    source(type='image/webp', srcset='img/placeholder.jpg', data-srcset=('img/' + mobileImg + '.webp 1x, ' + 'img/' + mobileImg + '@2x.webp 2x'))
+    source(media=desktop, srcset='img/placeholder.jpg', data-srcset=('img/' + desktopImg + '.jpg 1x, ' + 'img/' + desktopImg + '@2x.jpg 2x'))
+    source(media=tablet, srcset='img/placeholder.jpg', data-srcset=('img/' + tabletImg + '.jpg 1x, ' + 'img/' + tabletImg + '@2x.jpg 2x'))
+    img.lazy(src=('img/placeholder.jpg'), srcset='img/placeholder.jpg', data-srcset=('img/' + mobileImg + '@2x.jpg 2x'), data-src=('img/' + mobileImg + '.jpg'), alt=altText)
+
+mixin galleryPicture(desktopImg, tabletImg, mobileImg, altText, className)
+  picture(class=className)
+    if desktopImg
+      source(media=desktop, type='image/webp', srcset=('img/gallery/desktop/' + desktopImg + '.webp 1x, ' + 'img/gallery/' + desktopImg + '@2x.webp 2x'))
+    if tabletImg
+      source(media=tablet, type='image/webp', srcset=('img/gallery/tablet/' + tabletImg + '.webp 1x, ' + 'img/' + tabletImg + '@2x.webp 2x'))
+    source(type='image/webp', srcset=('img/gallery/mobile/' + mobileImg + '.webp 1x, ' + 'img/gallery/mobile/' + mobileImg + '@2x.webp 2x'))
+    if desktopImg
+      source(media=desktop, srcset=('img/gallery/desktop/' + desktopImg + '.jpg 1x, ' + 'img/gallery/' + desktopImg + '@2x.jpg 2x'))
+    if tabletImg
+      source(media=tablet, srcset=('img/gallery/tablet/' + tabletImg + '.jpg 1x, ' + 'img/gallery/' + tabletImg + '@2x.jpg 2x'))
+    img(src=('img/gallery/mobile/' + mobileImg + '.jpg'), srcset=('img/gallery/mobile/' + mobileImg + '@2x.jpg 2x'), alt=altText)
+
+mixin lazyModalSlide(desktopImg, tabletImg, mobileImg, altText, pictureClass)
+  picture(class=pictureClass)
+    if desktopImg
+      source(media=desktop, type='image/webp', srcset='img/placeholder.jpg', data-srcset=('img/gallery/desktop/' + desktopImg + '.webp 1x, ' + 'img/gallery/' + desktopImg + '@2x.webp 2x'))
+    if tabletImg
+      source(media=tablet, type='image/webp', srcset='img/placeholder.jpg', data-srcset=('img/gallery/tablet/' + tabletImg + '.webp 1x, ' + 'img/' + tabletImg + '@2x.webp 2x'))
+    source(type='image/webp', srcset='img/placeholder.jpg', data-srcset=('img/gallery/mobile/' + mobileImg + '.webp 1x, ' + 'img/gallery/mobile/' + mobileImg + '@2x.webp 2x'))
+    if desktopImg
+      source(media=desktop, srcset='img/placeholder.jpg', data-srcset=('img/gallery/desktop/' + desktopImg + '.jpg 1x, ' + 'img/gallery/' + desktopImg + '@2x.jpg 2x'))
+    if tabletImg
+      source(media=tablet, srcset='img/placeholder.jpg', data-srcset=('img/gallery/tablet/' + tabletImg + '.jpg 1x, ' + 'img/gallery/' + tabletImg + '@2x.jpg 2x'))
+    img.lazy.gallery__image.gallery__image--unloaded(src='img/placeholder.jpg', data-src=('img/gallery/mobile/' + mobileImg + '.jpg'), srcset='img/placeholder.jpg', data-srcset=('img/gallery/mobile/' + mobileImg + '@2x.jpg 2x'), alt=altText)

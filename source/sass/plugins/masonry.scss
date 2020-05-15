@@ -1,0 +1,17 @@
+.grid {
+  @include list-reset;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 19.4%;
+  padding: 0.28%;
+}
+
+@media (max-width: $mobile-width) {
+  .grid-sizer,
+  .grid-item {
+    width: 32.7%;
+    padding: 0.28%;
+  }
+}

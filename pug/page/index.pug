@@ -1,0 +1,13 @@
+extends ../layout/main.pug
+
+block variables
+  - var title = 'Весна Всегда, флористика с душой'
+
+block content
+  include ../section/intro.pug
+    include ../section/header.pug
+    include ../section/banner.pug
+  main
+    include ../section/services.pug
+    include ../section/campaigns.pug
+    include ../section/contact-form.pug
