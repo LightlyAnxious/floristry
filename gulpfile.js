@@ -56,7 +56,8 @@ gulp.task("views", function buildHTML() {
       prettyHtml({
         indent_size: 2,
         indent_char: " ",
-        unformatted: ["code", "pre", "em", "strong", "span", "i", "b", "br"],
+        unformatted: [],
+        preserve_newlines: false,
         end_with_newline: true,
       })
     )
@@ -224,4 +225,4 @@ gulp.task("clean", function() {
 });
 
 gulp.task("build", gulp.series("clean", "sprite", "images", "webp", "views", "uglify", "copy", "css", "html"));
-gulp.task("start", gulp.series("views", "html", "css", "server"));
+gulp.task("start", gulp.series("css", "server"));

@@ -57,12 +57,6 @@
   }
 }
 
-.gallery__image {
-  &--unloaded {
-    min-height: 200px;
-  }
-}
-
 @media (max-width: $mobile-width) {
   .gallery__title {
     font-size: 25px;

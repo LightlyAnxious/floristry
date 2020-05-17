@@ -30,6 +30,24 @@ const onEscEvent = function (evt, action) {
   }
 };
 
+// * Debounce
+
+function debounce(func, wait, immediate) {
+  let timeout;
+  return function() {
+    let context = this, args = arguments;
+    let later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+    console.log(!timeout);
+  };
+};
+
 // ! Функция открытия модального окна
 
 const openModal = (el, capture) => {
@@ -87,17 +105,16 @@ if (msnryGrid) {
     transitionDuration: "0.2s"
   });
 
-  function doMasonry() {
+  let doMasonry = debounce(function() {
     msnry.layout();
-  };
+  }, 250);
 
   document.addEventListener("DOMContentLoaded", () =>
     yall({
       events: {
         load: function (event) {
           if (event.target.classList.contains("gallery__image--unloaded")) {
-            event.target.classList.remove("gallery__image--unloaded");
-            window.setTimeout(doMasonry, 300);
+            doMasonry();
           }
         }
       },
@@ -106,6 +123,7 @@ if (msnryGrid) {
       }
     })
   );
+
 } else {
 
   document.addEventListener("DOMContentLoaded", () =>
