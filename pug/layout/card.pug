@@ -7,9 +7,8 @@ html(lang='ru')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title #{title}
+    include ../utils/favicons.pug
     link(rel='stylesheet preload', href='css/style.min.css', as='style')
-    script(defer, src='https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver', crossorigin='anonymous')
-    script(defer, src='https://cdnjs.cloudflare.com/ajax/libs/svgxuse/1.2.6/svgxuse.min.js')
   body
     .feature-page
       header.page-header.lazy-bg
