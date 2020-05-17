@@ -22,6 +22,7 @@ var uglify = require("gulp-uglify-es").default;
 var pug = require("gulp-pug");
 var prettyHtml = require("gulp-pretty-html");
 var touch = require("gulp-touch-fd");
+var favicons = require("gulp-favicons");
 
 function onError(err) {
   console.log(err);
@@ -173,6 +174,32 @@ gulp.task("html", function() {
       include()
     ]))
     .pipe(gulp.dest("build"));
+});
+
+gulp.task("favicon", function () {
+  return gulp.src("flower.png")
+  .pipe(
+    favicons({
+      appName: "Весна Всегда",
+      appShortName: "Весна Всегда",
+      appDescription: "Весна Всегда, флористика с душой",
+      developerName: "Даниил Приходько",
+      developerURL: "http://https://github.com/LightlyAnxious",
+      background: "#020307",
+      path: "",
+      url: "http://https://github.com/LightlyAnxious",
+      display: "standalone",
+      orientation: "portrait",
+      scope: "/",
+      start_url: "/?homescreen=1",
+      version: 1.0,
+      logging: false,
+      html: "index.html",
+      pipeHTML: true,
+      replace: true
+    })
+  )
+  .pipe(gulp.dest("source/favicons"));
 });
 
 gulp.task("copy", function() {

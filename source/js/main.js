@@ -98,9 +98,6 @@ if (msnryGrid) {
           if (event.target.classList.contains("gallery__image--unloaded")) {
             event.target.classList.remove("gallery__image--unloaded");
             window.setTimeout(doMasonry, 300);
-            console.log(
-              event.target.classList.contains("gallery__image--unloaded")
-            );
           }
         }
       },
