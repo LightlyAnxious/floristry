@@ -178,7 +178,7 @@ gulp.task("html", function() {
 });
 
 gulp.task("favicon", function () {
-  return gulp.src("flower.png")
+  return gulp.src("source/img/favicon/*.png")
   .pipe(
     favicons({
       appName: "Весна Всегда",
