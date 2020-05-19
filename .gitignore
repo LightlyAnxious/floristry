@@ -9,8 +9,9 @@
 .eslintignore
 .eslintrc
 .stylelintrc
-layouts/
+layout/
 source/img/opt
+source/img/_raw
 build/img/opt
 node_modules/
 npm-debug.*
