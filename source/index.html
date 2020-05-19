@@ -219,213 +219,209 @@
 </head>
 
 <body>
-  <main>
-    <!--- Intro
+  <!--- Intro
+  -->
+  <div class="intro">
+    <picture class="intro__bg-image">
+      <source
+        media="(min-width: 1140px)"
+        type="image/webp"
+        srcset="img/main-bg.webp 1x, img/main-bg@2x.webp 2x"
+      >
+      <source
+        media="(min-width: 720px)"
+        type="image/webp"
+        srcset="img/main-bg--tablet.webp 1x, img/main-bg--tablet@2x.webp 2x"
+      >
+      <source
+        type="image/webp"
+        srcset="img/main-bg--mobile.webp 1x, img/main-bg--mobile@2x.webp 2x"
+      >
+      <source
+        media="(min-width: 1140px)"
+        srcset="img/main-bg.jpg 1x, img/main-bg@2x.jpg 2x"
+      >
+      <source
+        media="(min-width: 720px)"
+        srcset="img/main-bg--tablet.jpg 1x, img/main-bg--tablet@2x.jpg 2x"
+      >
+      <img
+        src="img/main-bg--mobile.jpg"
+        srcset="img/main-bg--mobile@2x.jpg 2x"
+        alt="Флористика с душой"
+      >
+    </picture>
+    <!--- Header
     -->
-    <div class="intro">
-      <picture class="intro__bg-image">
-        <source
-          media="(min-width: 1140px)"
-          type="image/webp"
-          srcset="img/main-bg.webp 1x, img/main-bg@2x.webp 2x"
-        >
-        <source
-          media="(min-width: 720px)"
-          type="image/webp"
-          srcset="img/main-bg--tablet.webp 1x, img/main-bg--tablet@2x.webp 2x"
-        >
-        <source
-          type="image/webp"
-          srcset="img/main-bg--mobile.webp 1x, img/main-bg--mobile@2x.webp 2x"
-        >
-        <source
-          media="(min-width: 1140px)"
-          srcset="img/main-bg.jpg 1x, img/main-bg@2x.jpg 2x"
-        >
-        <source
-          media="(min-width: 720px)"
-          srcset="img/main-bg--tablet.jpg 1x, img/main-bg--tablet@2x.jpg 2x"
-        >
-        <img
-          src="img/main-bg--mobile.jpg"
-          srcset="img/main-bg--mobile@2x.jpg 2x"
-          alt="Флористика с душой"
-        >
-      </picture>
-      <!--- Header
-      -->
-      <header class="page-header">
-        <div class="page-header__wrapper">
-          <a class="page-header__logo">
-            <svg class="page-header__image">
-              <use xlink:href="img/sprite_auto.svg#logo"></use>
-            </svg>
-          </a>
-          <div class="menu-overlay">
-            <nav class="menu">
-              <div class="menu__container">
-                <a class="menu__logo" href="index.html" aria-label="Меню">
-                  <svg class="menu__image">
-                    <use xlink:href="img/sprite_auto.svg#logo-menu"></use>
-                  </svg>
-                </a>
-                <ul class="menu__list">
-                  <li class="menu__item">
-                    <a
-                      class="menu__link"
-                      href="wedding.html"
-                      aria-label="Свадебная флористика"
-                    >
-                      Свадебная
-                      <br>флористика
-                    </a>
-                  </li>
-                  <li class="menu__item">
-                    <a
-                      class="menu__link"
-                      href="events.html"
-                      aria-label="Букеты на любые &lt;br&gt; мероприятия"
-                    >Букеты на любые мероприятия</a>
-                  </li>
-                  <li class="menu__item">
-                    <a
-                      class="menu__link"
-                      href="compositions.html"
-                      aria-label="Композиции"
-                    >Композиции</a>
-                  </li>
-                  <li class="menu__item">
-                    <a
-                      class="menu__link"
-                      href="decoration.html"
-                      aria-label="Оформление мероприятий"
-                    >
-                      Оформление
-                      <br>мероприятий
-                    </a>
-                  </li>
-                  <li class="menu__item">
-                    <a
-                      class="menu__link"
-                      href="gallery.html"
-                      aria-label="Галерея"
-                    >Галерея</a>
-                  </li>
-                </ul>
-                <span class="visually-hidden">закрыть меню</span>
-              </div>
-            </nav>
-          </div>
-          <button
-            class="page-header__btn page-header__btn--open"
-            aria-label="Закрыть меню"
-          >Меню</button>
+    <header class="page-header">
+      <div class="page-header__wrapper">
+        <a class="page-header__logo">
+          <svg class="page-header__image">
+            <use xlink:href="img/sprite_auto.svg#logo"></use>
+          </svg>
+        </a>
+        <div class="menu-overlay">
+          <nav class="menu">
+            <div class="menu__container">
+              <a class="menu__logo" href="index.html" aria-label="Меню">
+                <svg class="menu__image">
+                  <use xlink:href="img/sprite_auto.svg#logo-menu"></use>
+                </svg>
+              </a>
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a
+                    class="menu__link"
+                    href="wedding.html"
+                    aria-label="Свадебная флористика"
+                  >
+                    Свадебная
+                    <br>флористика
+                  </a>
+                </li>
+                <li class="menu__item">
+                  <a
+                    class="menu__link"
+                    href="events.html"
+                    aria-label="Букеты на любые &lt;br&gt; мероприятия"
+                  >Букеты на любые мероприятия</a>
+                </li>
+                <li class="menu__item">
+                  <a
+                    class="menu__link"
+                    href="compositions.html"
+                    aria-label="Композиции"
+                  >Композиции</a>
+                </li>
+                <li class="menu__item">
+                  <a
+                    class="menu__link"
+                    href="decoration.html"
+                    aria-label="Оформление мероприятий"
+                  >
+                    Оформление
+                    <br>мероприятий
+                  </a>
+                </li>
+                <li class="menu__item">
+                  <a
+                    class="menu__link"
+                    href="gallery.html"
+                    aria-label="Галерея"
+                  >Галерея</a>
+                </li>
+              </ul>
+              <span class="visually-hidden">закрыть меню</span>
+            </div>
+          </nav>
         </div>
-      </header>
-      <!--- Banner
-      -->
-      <section class="banner">
-        <div class="banner__wrapper">
-          <div class="banner__social-links social-links">
-            <ul class="social-links__list">
-              <li class="social-links__item">
-                <a
-                  class="social-links__link social-links__link--insta"
-                  href="#"
-                  aria-label="Весна всегда в instagram"
-                >
-                  <svg width="26" height="26">
-                    <use xlink:href="img/sprite_auto.svg#icon-insta"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="social-links__item">
-                <a
-                  class="social-links__link social-links__link--fb"
-                  href="#"
-                  aria-label="Весна всегда в facebook"
-                >
-                  <svg width="26" height="26">
-                    <use xlink:href="img/sprite_auto.svg#icon-fb"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="social-links__item">
-                <a
-                  class="social-links__link social-links__link--whatsapp"
-                  href="#"
-                  aria-label="Весна всегда в whatsapp"
-                >
-                  <svg width="26" height="26">
-                    <use xlink:href="img/sprite_auto.svg#icon-whatsapp"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="social-links__item">
-                <a
-                  class="social-links__link social-links__link--vk"
-                  href="#"
-                  aria-label="Весна всегда в vk"
-                >
-                  <svg width="26" height="26">
-                    <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="banner__promo">
-            <h1
-              class="visually-hidden"
-              aria-hidden="true"
-            >Весна всегда - цветы, аксессуары, настроение</h1>
-            <strong>Флористика с душой</strong>
-            <a
-              class="btn btn--transparent banner__btn"
-              href="gallery.html"
-              aria-label="Смотреть работы"
-            >Смотреть работы</a>
-            <a
-              class="banner__mouse-link"
-              href="#services"
-              aria-label="Скролл вниз"
-            >
-              <svg
-                width="38"
-                height="56"
-                viewBox="0 0 38 56"
-                xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="page-header__btn page-header__btn--open"
+          aria-label="Закрыть меню"
+        >Меню</button>
+      </div>
+    </header>
+    <!--- Banner
+    -->
+    <section class="banner">
+      <div class="banner__wrapper">
+        <div class="banner__social-links social-links">
+          <ul class="social-links__list">
+            <li class="social-links__item">
+              <a
+                class="social-links__link social-links__link--insta"
+                href="#"
+                aria-label="Весна всегда в instagram"
               >
-                <rect
-                  class="mouse"
-                  x="1.20913"
-                  y="0.35"
-                  width="35.5817"
-                  height="55.3"
-                  rx="17.7908"
-                  stroke-width="0.7"
-                ></rect>
-                <path
-                  class="wheel"
-                  d="M19 9.4649L19 18.9297"
-                  stroke-width="0.7"
-                ></path>
-              </svg>
-            </a>
-          </div>
+                <svg width="26" height="26">
+                  <use xlink:href="img/sprite_auto.svg#icon-insta"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a
+                class="social-links__link social-links__link--fb"
+                href="#"
+                aria-label="Весна всегда в facebook"
+              >
+                <svg width="26" height="26">
+                  <use xlink:href="img/sprite_auto.svg#icon-fb"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a
+                class="social-links__link social-links__link--whatsapp"
+                href="#"
+                aria-label="Весна всегда в whatsapp"
+              >
+                <svg width="26" height="26">
+                  <use xlink:href="img/sprite_auto.svg#icon-whatsapp"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-links__item">
+              <a
+                class="social-links__link social-links__link--vk"
+                href="#"
+                aria-label="Весна всегда в vk"
+              >
+                <svg width="26" height="26">
+                  <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="banner__promo">
+          <h1
+            class="visually-hidden"
+            aria-hidden="true"
+          >Весна всегда - цветы, аксессуары, настроение</h1>
+          <strong>Флористика с душой</strong>
           <a
-            class="banner__scroll"
+            class="btn btn--transparent banner__btn"
+            href="gallery.html"
+            aria-label="Смотреть работы"
+          >Смотреть работы</a>
+          <a
+            class="banner__mouse-link"
             href="#services"
-            aria-label="Перейти к каталогу услуг"
+            aria-label="Скролл вниз"
           >
-            <span>cмотреть каталог</span>
-            <svg class="banner__arrow" width="14" height="20">
-              <use xlink:href="img/sprite_auto.svg#icon-arrow"></use>
+            <svg
+              width="38"
+              height="56"
+              viewBox="0 0 38 56"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                class="mouse"
+                x="1.20913"
+                y="0.35"
+                width="35.5817"
+                height="55.3"
+                rx="17.7908"
+                stroke-width="0.7"
+              ></rect>
+              <path class="wheel" d="M19 9.4649L19 18.9297" stroke-width="0.7"></path>
             </svg>
           </a>
         </div>
-      </section>
-    </div>
+        <a
+          class="banner__scroll"
+          href="#services"
+          aria-label="Перейти к каталогу услуг"
+        >
+          <span>cмотреть каталог</span>
+          <svg class="banner__arrow" width="14" height="20">
+            <use xlink:href="img/sprite_auto.svg#icon-arrow"></use>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+  <main>
     <!--- Services
     -->
     <section class="services" id="services">
