@@ -14,6 +14,9 @@ section.contact-form.modal(aria-hidden= 'true')
         label.sr-only(for='name') Имя
         input(type='text', id='name', name='name', value='', placeholder='Имя', tabindex='1', required)
         label.sr-only(for='phone') Телефон
-        input(type='tel', id='phone', name='phone', pattern='\+?[0-9\s\-\(\)]+', value='', placeholder='Телефон', required, tabindex='1')
+        input(type='tel', id='phone', name='phone', value='', placeholder='Телефон', required, tabindex='1')
         button.contact-form__submit.btn.btn--white(type='submit', tabindex='1') Позвоните мне
+.modal-success
+  | Спасибо за вашу заявку! <br>
+  | В течение 10 минут мы вам перезвоним.
 .modal-overlay(aria-hidden= 'true')

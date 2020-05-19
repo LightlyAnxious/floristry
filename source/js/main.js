@@ -6,10 +6,11 @@ const menuBtn = document.querySelector(".page-header__btn");
 const menuOverlay = document.querySelector(".menu-overlay");
 const modal = document.querySelector(".modal");
 const modalOverlay = document.querySelector(".modal-overlay");
-const contactForm = document.querySelector(".contact-form__fields");
+const contactFields = document.querySelector(".contact-form__fields");
 const servicesList = document.querySelector(".services__list");
 const callButton = document.querySelector("#call-button");
 const modalClose = document.querySelector(".contact-form__close");
+const contactSubmit = document.querySelector(".contact-form__submit");
 const introBg = document.querySelector(".intro__bg-image");
 const galleryImages = document.querySelectorAll(".gallery__item");
 const cardSlides = document.querySelectorAll(".card__slide");
@@ -24,7 +25,7 @@ let step = 1;
 
 // * Функция обработки нажатия esc
 
-const onEscEvent = function (evt, action) {
+const onEscEvent = function(evt, action) {
   if (evt.keyCode === ESC_KEYCODE) {
     action();
   }
@@ -35,7 +36,8 @@ const onEscEvent = function (evt, action) {
 function debounce(func, wait, immediate) {
   let timeout;
   return function() {
-    let context = this, args = arguments;
+    let context = this,
+      args = arguments;
     let later = function() {
       timeout = null;
       if (!immediate) func.apply(context, args);
@@ -44,11 +46,10 @@ function debounce(func, wait, immediate) {
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
     if (callNow) func.apply(context, args);
-    console.log(!timeout);
   };
-};
+}
 
-// ! Функция открытия модального окна
+// !  Навигация модального окна
 
 const openModal = (el, capture) => {
   el.classList.add("modal--open");
@@ -75,9 +76,42 @@ const closeModal = (el, capture) => {
   }
 };
 
+// ! Обработка отправки формы
+
+if (modal && contactSubmit && contactFields) {
+  const contactForm = document.querySelector("#contact-form");
+  const modalSuccess = document.querySelector(".modal-success");
+
+  function onSubmitFormSend(evt) {
+    evt.preventDefault();
+    closeModal(modal, window);
+    modalOverlay.style.display = "block";
+    modalSuccess.style.display = "block";
+
+    setTimeout(() => {
+      modalOverlay.style.display = "none";
+      modalSuccess.style.display = "none";
+    }, 5000);
+
+    modalOverlay.addEventListener(
+      "click",
+      () => (modalSuccess.style.display = "none")
+    );
+
+    window.addEventListener("keydown", evt => {
+      if (evt.keyCode === ESC_KEYCODE) {
+        modalOverlay.style.display = "none";
+        modalSuccess.style.display = "none";
+      }
+    });
+  }
+
+  contactForm.addEventListener("submit", evt => onSubmitFormSend(evt));
+}
+
 // ! Функция блокировки скролла
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function() {
   if (winX !== null && winY !== null) {
     window.scrollTo(winX, winY);
   }
@@ -112,24 +146,22 @@ if (msnryGrid) {
   document.addEventListener("DOMContentLoaded", () =>
     yall({
       events: {
-        load: function (event) {
+        load: function(event) {
           if (event.target.classList.contains("gallery__image--unloaded")) {
             doMasonry();
           }
         }
       },
       options: {
-        once: true,
+        once: true
       }
     })
   );
-
 } else {
-
   document.addEventListener("DOMContentLoaded", () =>
     yall({
       observeChanges: true,
-      noPolyfill: true,
+      noPolyfill: true
     })
   );
 }
@@ -159,7 +191,7 @@ if (menuBtn && menuOverlay) {
   };
 
   menuBtn.addEventListener("click", onClickMenuToggle);
-  window.addEventListener("keydown", (evt) => {
+  window.addEventListener("keydown", evt => {
     onEscEvent(evt, closeMenu);
   });
 }
@@ -177,14 +209,14 @@ if (introBg !== null) {
 if (callButton && modal && modalClose && modalOverlay) {
   // Обработчики действий модального окна
 
-  callButton.addEventListener("click", () => openModal(modal, contactForm));
+  callButton.addEventListener("click", () => openModal(modal, contactFields));
 
   modalClose.addEventListener("click", () => closeModal(modal, callButton));
 
   modalOverlay.addEventListener("click", () => closeModal(modal, callButton));
 
-  window.addEventListener("keydown", (evt) => {
-    onEscEvent(evt, closeModal(modal, callButton));
+  window.addEventListener("keydown", evt => {
+    onEscEvent(evt, () => closeModal(modal, callButton));
   });
 }
 
@@ -219,7 +251,7 @@ const manageControls = (
 
 let servicesSlider;
 
-const breakpointChecker = function () {
+const breakpointChecker = function() {
   if (desktop.matches === true) {
     if (servicesSlider !== undefined && servicesList)
       servicesSlider.destroy(true, true);
@@ -230,7 +262,7 @@ const breakpointChecker = function () {
   }
 };
 
-const enableSwiper = function () {
+const enableSwiper = function() {
   servicesSlider = new Swiper(".swiper1", {
     a11y: true,
     paginationBulletMessage: "Перейти к слайду {{index}}",
@@ -240,7 +272,7 @@ const enableSwiper = function () {
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
-          renderBullet: function (index, className) {
+          renderBullet: function(index, className) {
             return (
               '<button class="' +
               className +
@@ -252,7 +284,7 @@ const enableSwiper = function () {
               index +
               "</button>"
             );
-          },
+          }
         },
 
         slidesPerView: 1,
@@ -263,14 +295,14 @@ const enableSwiper = function () {
         grabCursor: true,
         updateOnWindowResize: true,
         centeredSlides: true,
-        centeredSlidesBounds: true,
+        centeredSlidesBounds: true
       },
 
       768: {
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
-          renderBullet: function (index, className) {
+          renderBullet: function(index, className) {
             return (
               '<button class="' +
               className +
@@ -282,7 +314,7 @@ const enableSwiper = function () {
               index +
               "</button>"
             );
-          },
+          }
         },
 
         slidesPerView: 2,
@@ -291,9 +323,9 @@ const enableSwiper = function () {
         setWrapperSize: true,
         grabCursor: true,
         updateOnWindowResize: true,
-        cssWidthAndHeight: true,
-      },
-    },
+        cssWidthAndHeight: true
+      }
+    }
   });
 };
 
@@ -315,7 +347,7 @@ let cardsSlider = new Swiper(".swiper2", {
   updateOnWindowResize: true,
   navigation: {
     nextEl: ".card__control--next",
-    prevEl: ".card__control--prev",
+    prevEl: ".card__control--prev"
   },
   // cssWidthAndHeight: true,
 
@@ -325,7 +357,7 @@ let cardsSlider = new Swiper(".swiper2", {
       initialSlide: 0,
       keyboardControl: true,
       grabCursor: true,
-      updateOnWindowResize: true,
+      updateOnWindowResize: true
     },
 
     384: {
@@ -335,8 +367,8 @@ let cardsSlider = new Swiper(".swiper2", {
           if (window.innerWidth >= 384) {
             cardsSlider.slides.css("width", "");
           }
-        },
-      },
+        }
+      }
     },
 
     768: {
@@ -348,21 +380,21 @@ let cardsSlider = new Swiper(".swiper2", {
       keyboardControl: true,
       grabCursor: true,
       updateOnWindowResize: true,
-      cssWidthAndHeight: true,
+      cssWidthAndHeight: true
     },
 
     1141: {
-      spaceBetween: 9,
+      spaceBetween: 9
     },
 
     1300: {
-      spaceBetween: 12,
+      spaceBetween: 12
     },
 
     1500: {
-      spaceBetween: 16,
-    },
-  },
+      spaceBetween: 16
+    }
+  }
 });
 
 // * Обработчик смены слайдов
@@ -388,11 +420,11 @@ let modalSliderOptions = {
   updateOnWindowResize: true,
   navigation: {
     nextEl: ".modal-btn--next",
-    prevEl: ".modal-btn--prev",
+    prevEl: ".modal-btn--prev"
   },
   fadeEffect: {
-    crossFade: true,
-  },
+    crossFade: true
+  }
 };
 
 const gallerySlider = new Swiper(".swiper3", modalSliderOptions);
@@ -409,7 +441,7 @@ if (modal && galleryImages && modalSlider) {
 
     // * Функция создания слайда
 
-    const getLazySlide = (index) => {
+    const getLazySlide = index => {
       let slideElement = slideTemplate.content
         .querySelector(".modal-slider__picture")
         .cloneNode(true);

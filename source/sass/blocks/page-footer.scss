@@ -31,11 +31,11 @@
   padding-top: 10px;
 
   & ul {
-      @include list-reset;
+    @include list-reset;
 
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   & li {
@@ -66,18 +66,19 @@
   &:active {
     color: darken($color: $green, $amount: 30%);
 
-    transform: scale(.98);
+    transform: scale(0.98);
   }
 }
 
 .page-footer__socials {
-  width: 270px;
+  width: 40%;
   padding-bottom: 20px;
 
   & ul {
     @include list-reset;
 
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 
@@ -90,19 +91,19 @@
 
 @media (max-width: $tablet-width) {
   .page-footer__nav {
-      width: 100%;
-      padding-top: 30px;
+    width: 100%;
+    padding-top: 30px;
 
-      & ul {
-        align-items: center;
-        flex-direction: column;
-      }
+    & ul {
+      align-items: center;
+      flex-direction: column;
+    }
 
-      & li {
-          padding: 10px 0;
+    & li {
+      padding: 10px 0;
 
-          text-align: center;
-      }
+      text-align: center;
+    }
   }
 
   .page-footer__link {
@@ -134,8 +135,7 @@
     }
 
     & li {
-        padding: 5.5px 0;
-
+      padding: 5.5px 0;
     }
   }
 

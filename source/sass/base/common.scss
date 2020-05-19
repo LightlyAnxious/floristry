@@ -281,6 +281,23 @@ img {
   }
 }
 
+.modal-success {
+  @include center;
+
+  position: fixed;
+  z-index: 22;
+
+  display: none;
+  width: 40%;
+  padding: 3vh 1vh;
+
+  font-size: 30px;
+  line-height: 170%;
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.4);
+}
+
 .modal-overlay {
   position: fixed;
   z-index: 21;

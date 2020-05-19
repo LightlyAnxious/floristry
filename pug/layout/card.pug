@@ -11,6 +11,8 @@ html(lang='ru')
     link(rel='stylesheet preload', href='css/style.min.css', as='style')
   body
     .feature-page
+      //
+        - Header
       header.page-header.lazy-bg
         .page-header__wrapper.feature-page__header
           a.page-header__logo(href= 'index.html')
@@ -19,6 +21,8 @@ html(lang='ru')
           .menu-overlay
             include ../section/menu.pug
           button.page-header__btn.page-header__btn--open Меню
+      //
+        - Card
       section.card
         .card__wrapper
           +picture(('cards/' + cardBg), ('cards/tablet/' + cardBg + '--tablet'), ('cards/mobile/' + cardBg + '--mobile'), cardBgText, 'card__bg-image')

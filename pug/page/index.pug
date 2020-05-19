@@ -4,10 +4,22 @@ block variables
   - var title = 'Весна Всегда, флористика с душой'
 
 block content
-  include ../section/intro.pug
-    include ../section/header.pug
-    include ../section/banner.pug
   main
+    //
+      - Intro
+    include ../section/intro.pug
+      //
+        - Header
+      include ../section/header.pug
+      //
+        - Banner
+      include ../section/banner.pug
+    //
+      - Services
     include ../section/services.pug
+    //
+      - Campaigns
     include ../section/campaigns.pug
+    //
+      - Contact-form
     include ../section/contact-form.pug

@@ -200,7 +200,7 @@ gulp.task("favicon", function () {
       replace: true
     })
   )
-  .pipe(gulp.dest("source/favicons"));
+  .pipe(gulp.dest("build/favicons"));
 });
 
 gulp.task("copy", function() {
@@ -210,6 +210,7 @@ gulp.task("copy", function() {
         "source/fonts/**/*.{woff,woff2}",
         // "source/img/**",
         "source/img/**/*.svg",
+        '!source/img/**/_*/**/*',
         "source/js/**",
         "source//*.ico",
       ],
@@ -224,5 +225,5 @@ gulp.task("clean", function() {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "sprite", "images", "webp", "views", "uglify", "copy", "css", "html"));
+gulp.task("build", gulp.series("clean", "sprite", "images", "webp", "views", "uglify", "copy", "css", "html", "favicon"));
 gulp.task("start", gulp.series("css", "server"));
