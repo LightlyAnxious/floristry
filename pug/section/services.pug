@@ -9,6 +9,7 @@ section.services#services
       h2.services__title Каталог услуг
       ul.swiper-wrapper
         for slide, index in servicesArr
+          <!-- Service #{index + 1} -->
           li.swiper-slide.services__slide
             +picture(slide.img, slide.img, slide.img + '--mobile', slide.text, "services__slide-img")
             a.services__link(href= slide.link, class="services__link--" + slide.mod)

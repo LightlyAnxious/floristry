@@ -220,7 +220,7 @@
     -->
     <header class="page-header lazy-bg">
       <div class="page-header__wrapper feature-page__header">
-        <a class="page-header__logo" href="index.html">
+        <a class="page-header__logo feature-page__logo" href="index.html">
           <svg class="page-header__image">
             <use xlink:href="img/sprite_auto.svg#logo"></use>
           </svg>
@@ -280,7 +280,9 @@
             </div>
           </nav>
         </div>
-        <button class="page-header__btn page-header__btn--open">Меню</button>
+        <button
+          class="feature-page__menu-btn page-header__btn page-header__btn--open"
+        >Меню</button>
       </div>
     </header>
     <!--- Card
@@ -584,10 +586,15 @@
             </div>
           </div>
           <div class="card__inner">
-            <h1 class="card__title">Букеты невесты и свадебное оформление</h1>
-            <p>Свадьба&mdash;самое важное событие в&nbsp;жизни молодожен. Поэтому каждый из&nbsp;будущих супругов хочет, чтобы на&nbsp;торжестве все было идеально. Наша компания превзойдет ваши ожидания по&nbsp;красоте, качеству и&nbsp;лояльному ценнику. Обращаясь к&nbsp;нам, вы&nbsp;можете не&nbsp;переживать за&nbsp;оформление вашей свадьбы.</p>
+            <h1
+              class="card__title card__title--wedding"
+            >Букеты невесты и свадебное оформление</h1>
+            <p class="card__desc card__desc--wedding">
+              Свадьба&mdash;самое важное событие в&nbsp;жизни молодожен. Поэтому каждый из будущих супругов хочет, чтобы на&nbsp;торжестве все было идеально. Наша компания превзойдет ваши ожидания по&nbsp;красоте,
+              <br>качеству и&nbsp;лояльному ценнику. Обращаясь к&nbsp;нам, вы&nbsp;можете не переживать за&nbsp;оформление вашей свадьбы.
+            </p>
             <button
-              class="btn btn--transparent card__btn"
+              class="card__call-btn btn btn--transparent"
               id="call-button"
             >Заказать</button>
           </div>
@@ -604,41 +611,48 @@
   <footer class="page-footer feature-page__footer">
     <div class="page-footer__wrapper">
       <div class="page-footer__nav">
-        <ul>
-          <li>
+        <ul class="page-footer__list">
+          <li class="page-footer__item">
             <a
               class="page-footer__link"
               href="wedding.html"
               aria-label="Свадебная флористика"
             >Свадебная флористика</a>
           </li>
-          <li>
+          <li class="page-footer__item">
             <a
               class="page-footer__link"
               href="events.html"
               aria-label="Букеты на любые мероприятия"
             >Букеты на любые мероприятия</a>
           </li>
-          <li>
+          <li class="page-footer__item">
             <a
               class="page-footer__link"
               href="#"
               aria-label="Букеты невесты"
             >Букеты невесты</a>
           </li>
-          <li>
+          <li class="page-footer__item">
             <a
               class="page-footer__link"
               href="compositions.html"
               aria-label="Композиции"
             >Композиции</a>
           </li>
-          <li>
+          <li class="page-footer__item">
             <a
               class="page-footer__link"
               href="decoration.html"
               aria-label="Оформление мероприятий"
             >Оформление мероприятий</a>
+          </li>
+          <li class="page-footer__item">
+            <a
+              class="page-footer__link"
+              href="gallery.html"
+              aria-label="Галерея"
+            >Галерея</a>
           </li>
         </ul>
       </div>
@@ -648,6 +662,7 @@
             <a
               class="social-links__link social-links__link--insta"
               href="#"
+              target="_blank"
               aria-label="Весна всегда в instagram"
             >
               <svg width="26" height="26">
@@ -659,6 +674,7 @@
             <a
               class="social-links__link social-links__link--fb"
               href="#"
+              target="_blank"
               aria-label="Весна всегда в facebook"
             >
               <svg width="26" height="26">
@@ -670,6 +686,7 @@
             <a
               class="social-links__link social-links__link--whatsapp"
               href="#"
+              target="_blank"
               aria-label="Весна всегда в whatsapp"
             >
               <svg width="26" height="26">
@@ -681,6 +698,7 @@
             <a
               class="social-links__link social-links__link--vk"
               href="#"
+              target="_blank"
               aria-label="Весна всегда в vk"
             >
               <svg width="26" height="26">

@@ -1,12 +1,23 @@
 .feature-page {
-  position: relative;
+  // position: relative;
 
-  min-height: 1080px;
+  min-height: 100vh;
 
   background-image: url("../img/rectangle.png");
   background-repeat: no-repeat;
   background-position: 3% 30px;
-  background-size: 52% 1021px;
+  background-size: 52% 94.5vh;
+}
+
+.feature-page__header {
+  padding: 8vh 2% 5vh;
+}
+
+.feature-page__logo {
+  width: 158px;
+  height: 49px;
+
+  outline: none;
 }
 
 .feature-page__footer {
@@ -28,6 +39,15 @@
     padding: 30px 2% 35px;
   }
 
+  .feature-page__logo {
+    width: 137px;
+    height: 47px;
+  }
+
+  .feature-page__menu-btn {
+    align-self: baseline;
+  }
+
   .feature-page__footer {
     display: block;
   }
@@ -39,5 +59,10 @@
 
     width: 100%;
     padding: 16px 6.25% 20px;
+  }
+
+  .feature-page__logo {
+    width: 96px;
+    height: 29px;
   }
 }

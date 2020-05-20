@@ -3,6 +3,6 @@
 ul.social-links__list
   for i in socialArr
     li.social-links__item
-      a.social-links__link(href=i.link, class="social-links__link--" + i.mod, aria-label= i.aria)
+      a.social-links__link(href=i.link, class="social-links__link--" + i.mod, target= '_blank', aria-label= i.aria)
         svg(width='26', height='26')
           use(xlink:href="img/sprite_auto.svg#" + i.id)

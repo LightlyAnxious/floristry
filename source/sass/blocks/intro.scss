@@ -36,3 +36,9 @@
     object-fit: cover;
   }
 }
+
+@media (max-width: $mobile-width) {
+  .intro {
+    min-height: unset;
+  }
+}

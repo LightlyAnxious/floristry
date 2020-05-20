@@ -15,12 +15,12 @@ html(lang='ru')
         - Header
       header.page-header.lazy-bg
         .page-header__wrapper.feature-page__header
-          a.page-header__logo(href= 'index.html')
+          a.page-header__logo.feature-page__logo(href= 'index.html')
             svg.page-header__image
               use(xlink:href='img/sprite_auto.svg#logo')
           .menu-overlay
             include ../section/menu.pug
-          button.page-header__btn.page-header__btn--open Меню
+          button.feature-page__menu-btn.page-header__btn.page-header__btn--open Меню
       //
         - Card
       section.card
@@ -39,7 +39,7 @@ html(lang='ru')
                 button.card__control.card__control--prev
             .card__inner
               block card
-              button.btn.btn--transparent.card__btn#call-button Заказать
+              button.card__call-btn.btn.btn--transparent#call-button Заказать
             a.card__social-link(href='#')
               span Больше фотографий в профиле
               svg.card__icon
