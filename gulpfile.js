@@ -21,7 +21,6 @@ var del = require("del");
 var uglify = require("gulp-uglify-es").default;
 var pug = require("gulp-pug");
 var prettyHtml = require("gulp-pretty-html");
-var touch = require("gulp-touch-fd");
 var favicons = require("gulp-favicons");
 
 function onError(err) {
@@ -65,18 +64,22 @@ gulp.task("views", function buildHTML() {
 });
 
 gulp.task("css", function() {
-  return gulp.src("source/sass/style.scss")
+  return gulp
+    .src("source/sass/style.scss")
     .pipe(plumber(onError))
     .pipe(sourcemap.init())
     .pipe(sass())
-    .pipe(postcss([autoprefixer({
-      grid: true
-    })]))
+    .pipe(
+      postcss([
+        autoprefixer({
+          grid: true
+        })
+      ])
+    )
     .pipe(csso())
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
-    .pipe(touch())
     .pipe(server.stream());
 });
 
@@ -174,7 +177,9 @@ gulp.task("html", function() {
     .pipe(posthtml([
       include()
     ]))
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("build"))
+    .pipe(server.stream());
+
 });
 
 gulp.task("favicon", function () {

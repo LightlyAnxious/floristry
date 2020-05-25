@@ -33,8 +33,8 @@
   justify-content: flex-start;
 
   width: 37.23%;
-  min-height: 76vh;
-  padding: 2.4vh 5% 2vh 0;
+  min-height: 72.5vh;
+  padding: 6vh 5% 2vh 0;
 }
 
 .card__inner {
@@ -46,7 +46,6 @@
   align-items: flex-end;
 
   width: 100%;
-  min-height: 165px;
   max-width: 365px;
   margin: 0 auto 4.5vh 0;
 
@@ -62,6 +61,7 @@
 
 .card__desc {
   width: 100%;
+  max-width: 550px;
   margin: 0 auto 2.6vh 0;
 
   font-size: 18px;
@@ -72,7 +72,7 @@
   }
 }
 
-.card__btn {
+.card__call-btn {
   width: 135px;
   margin: 0 0 9vh 0;
 }
@@ -370,6 +370,8 @@
     display: none;
   }
 }
+
+// ! Мобильная версия
 
 @media (max-width: $mobile-width) {
   .card__bg-image {
