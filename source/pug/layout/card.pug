@@ -1,0 +1,50 @@
+include ../utils/mixins.pug
+block variables
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title #{title}
+    include ../utils/favicons.pug
+    link(rel='stylesheet preload', href='css/style.min.css', as='style')
+  body
+    .feature-page
+      //
+        - Header
+      header.page-header.lazy-bg
+        .page-header__wrapper.feature-page__header
+          a.page-header__logo.feature-page__logo(href= 'index.html')
+            svg.page-header__image
+              use(xlink:href='img/sprite_auto.svg#logo')
+          .menu-overlay
+            include ../section/menu.pug
+          button.feature-page__menu-btn.page-header__btn.page-header__btn--open Меню
+      //
+        - Card
+      section.card
+        .card__wrapper
+          +picture(('cards/' + cardBg), ('cards/tablet/' + cardBg + '--tablet'), ('cards/mobile/' + cardBg + '--mobile'), cardBgText, 'card__bg-image')
+          .card__content
+            .card__slider
+              .swiper-container.swiper2
+                ul.swiper-wrapper
+                  each slide, index in cardSlides
+                    li.swiper-slide.card__slide
+                      <!-- Item #{index + 1} -->
+                      +picture(('cards/' + slide), ('cards/tablet/' + slide + '--tablet'), ('cards/mobile/' + slide + '--mobile'), 'slide-' + (index + 1), 'card__slide-image')
+              .card__controls
+                button.card__control.card__control--next
+                button.card__control.card__control--prev
+            .card__inner
+              block card
+              button.card__call-btn.btn.btn--transparent#call-button Заказать
+            a.card__social-link(href='#')
+              span Больше фотографий в профиле
+              svg.card__icon
+                use(xlink:href='img/sprite_auto.svg#icon-insta')
+    include ../section/footer.pug
+    include ../section/contact-form.pug
+    script(src='js/vendor.min.js', defer)
+    script(src='js/main.min.js', defer)

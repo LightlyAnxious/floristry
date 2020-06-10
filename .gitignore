@@ -9,7 +9,6 @@
 .eslintignore
 .eslintrc
 .stylelintrc
-layout/
 build/
 source/img/_raw
 node_modules/
