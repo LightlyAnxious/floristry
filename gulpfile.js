@@ -140,8 +140,9 @@ gulp.task("images", function() {
     .pipe(
       imagemin([
         pngquant({
+          quality: [0.7, 0.9],
           speed: 1,
-          quality: [0.8, 0.9],
+          floyd: 1,
         }),
         zopfli({
           more: true,
@@ -153,10 +154,8 @@ gulp.task("images", function() {
             },
           ],
         }),
-        imagemin.jpegtran({
-          progressive: true,
-        }),
         mozjpeg({
+          progressive: true,
           quality: 90,
         }),
       ]),
