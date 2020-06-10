@@ -220,7 +220,7 @@ if (callButton && modal && modalClose && modalOverlay) {
   });
 }
 
-// ! Функция отображения кнопки слайдера
+// ! Функция отображения кнопок слайдера
 
 const manageControls = (
   prevCssClass,
@@ -431,6 +431,8 @@ const gallerySlider = new Swiper(".swiper3", modalSliderOptions);
 
 // ! Добавление слайдов
 
+const NUMBER_OF_SLIDES = 8;
+
 if (modal && galleryImages && modalSlider) {
   let galleryList = document.querySelector(".swiper-wrapper");
 
@@ -483,19 +485,23 @@ if (modal && galleryImages && modalSlider) {
 
       clearSlides();
 
-      for (let i = 1; i <= galleryImages.length; i++) {
+      for (let i = 1; i <= NUMBER_OF_SLIDES; i++) {
         getLazySlide(i);
       }
 
       slider.update();
-      slider.slideTo(index);
+      slider.slideTo(index - 1);
     };
 
     // * Обработка действий по нажатию на изображения
 
     images.forEach((galleryToggle, index) => {
-      galleryToggle.addEventListener("click", () => {
-        onClickRenderSlides(index, gallerySlider);
+      galleryToggle.addEventListener("click", (evt) => {
+       let pictureWrap = evt.target.lastElementChild;
+       let imgSrc = pictureWrap.lastElementChild.src;
+       let matches = imgSrc.match(/\d+/g);
+
+        onClickRenderSlides(matches[1], gallerySlider);
         openModal(modal, modalSlider);
 
         manageControls(
@@ -519,7 +525,7 @@ if (modal && galleryImages && modalSlider) {
         ".modal-btn--next",
         gallerySlider,
         gallerySlider.realIndex,
-        galleryImages.length
+        NUMBER_OF_SLIDES
       );
     });
   }

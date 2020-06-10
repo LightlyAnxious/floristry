@@ -10,6 +10,7 @@
 .eslintrc
 .stylelintrc
 layout/
+build/
 source/img/_raw
 node_modules/
 npm-debug.*

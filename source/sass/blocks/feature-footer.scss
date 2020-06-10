@@ -1,0 +1,9 @@
+.feature-footer {
+  display: none;
+}
+
+@media (max-width: $tablet-width) {
+  .feature-footer {
+    display: block;
+  }
+}

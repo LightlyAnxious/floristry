@@ -1,6 +1,4 @@
 .feature-page {
-  // position: relative;
-
   min-height: 100vh;
 
   background-image: url("../img/rectangle.png");
@@ -18,10 +16,6 @@
   height: 49px;
 
   outline: none;
-}
-
-.feature-page__footer {
-  display: none;
 }
 
 @media (max-width: $tablet-width) {
@@ -46,10 +40,6 @@
 
   .feature-page__menu-btn {
     align-self: baseline;
-  }
-
-  .feature-page__footer {
-    display: block;
   }
 }
 

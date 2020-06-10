@@ -41,7 +41,6 @@
   margin: 0 0 55px;
   box-sizing: border-box;
 
-
   text-align: center;
 
   & p {
@@ -59,7 +58,6 @@
 
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-between;
 
     width: 100%;
     padding: 0;
@@ -76,7 +74,7 @@
 
     background-color: $brown;
 
-    &:last-of-type {
+    &:nth-child(4n + 4) {
       margin-right: 0;
     }
   }

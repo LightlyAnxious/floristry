@@ -109,7 +109,9 @@
 
   opacity: 0.5;
 
-  transition: color linear 0.15s, font-size linear 0.15s,
+  transition:
+    color linear 0.15s,
+    font-size linear 0.15s,
     line-height linear 0.15s;
 
   &:hover,
@@ -160,7 +162,8 @@
   .menu__logo {
     width: 137px;
     height: 47px;
-    margin-top: 50px;
+    margin-top: 25px;
+    margin-bottom: 3vh;
   }
 
   .menu__list {
@@ -236,5 +239,3 @@
     display: none;
   }
 }
-
-@import "../base/animation.scss";
