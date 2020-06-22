@@ -6,7 +6,10 @@
 }
 
 .gallery__title {
-  margin-top: 10px;
+  display: block;
+  margin: 10px 0 50px;
+  padding: 0 6.25%;
+  box-sizing: border-box;
 
   font-size: 45px;
   line-height: 50px;

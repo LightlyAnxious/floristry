@@ -2,7 +2,7 @@ header.page-header
   .page-header__wrapper(class= headerClass)
     a.page-header__logo(href=(headerHref ? headerHref : false))
       svg.page-header__image
-        use(xlink:href='img/sprite_auto.svg#logo')
+        use(xlink:href='img/sprite_auto.svg#logo-main')
     .menu-overlay
       include menu.pug
     button.page-header__btn.page-header__btn--open(aria-label= 'Закрыть меню') Меню

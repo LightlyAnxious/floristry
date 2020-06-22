@@ -17,11 +17,11 @@ html(lang='ru')
     include ../utils/favicons.pug
     link(rel='stylesheet preload', href='css/style.min.css', as='style')
   body
-    //
-      - Gallery
+    // Gallery
     section.gallery
+      h1.visually-hidden Галерея
       include ../section/header.pug
-      h1.gallery__title Наши работы
+      strong.gallery__title Наши работы
       .gallery__inner
         ul.gallery__list.grid
           li.grid-sizer
@@ -32,5 +32,3 @@ html(lang='ru')
     include ../section/footer.pug
     include ../section/modal-slider.pug
     include ../section/templates.pug
-    script(src='js/vendor.min.js', defer)
-    script(src='js/main.min.js', defer)

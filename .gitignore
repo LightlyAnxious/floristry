@@ -11,6 +11,7 @@
 .stylelintrc
 build/
 source/img/_raw
+reports/
 node_modules/
 npm-debug.*
 Thumbs.db

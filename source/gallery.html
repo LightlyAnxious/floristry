@@ -217,16 +217,15 @@
   >
   <link rel="stylesheet preload" href="css/style.min.css" as="style">
 </head>
-
 <body>
-  <!--- Gallery
-  -->
+  <!-- Gallery-->
   <section class="gallery">
+    <h1 class="visually-hidden">Галерея</h1>
     <header class="page-header">
       <div class="page-header__wrapper gallery__header-wrap">
         <a class="page-header__logo" href="index.html">
           <svg class="page-header__image">
-            <use xlink:href="img/sprite_auto.svg#logo"></use>
+            <use xlink:href="img/sprite_auto.svg#logo-main"></use>
           </svg>
         </a>
         <div class="menu-overlay">
@@ -342,7 +341,7 @@
         >Меню</button>
       </div>
     </header>
-    <h1 class="gallery__title">Наши работы</h1>
+    <strong class="gallery__title">Наши работы</strong>
     <div class="gallery__inner">
       <ul class="gallery__list grid">
         <li class="grid-sizer"></li>
@@ -1730,13 +1729,6 @@
           <li class="page-footer__item">
             <a
               class="page-footer__link"
-              href="#"
-              aria-label="Букеты невесты"
-            >Букеты невесты</a>
-          </li>
-          <li class="page-footer__item">
-            <a
-              class="page-footer__link"
               href="compositions.html"
               aria-label="Композиции"
             >Композиции</a>
@@ -1822,13 +1814,11 @@
     <button class="modal-slider__close-btn"></button>
   </div>
   <div class="modal-overlay" aria-hidden="true"></div>
-  <template id="modal-slider-template">
+  <template class="modal-slider" id="modal-slider-template">
     <picture class="modal-slider__picture">
       <source type="image/webp" data-srcset>
       <img class="lazy" src="img/placeholder.jpg" data-srcset data-src alt>
     </picture>
   </template>
-  <script src="js/vendor.min.js" defer></script>
-  <script src="js/main.min.js" defer></script>
 </body>
 </html>

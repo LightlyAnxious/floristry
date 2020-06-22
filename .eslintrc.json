@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.js"],
+      "extends": ["standard", "htmlacademy/es6"],
+      "rules": {
+        "indent": ["error", 2],
+        "semi": ["error", "never"],
+        "quotes": ["error", "backtick"]
+      }
+    }
+  ]
+}

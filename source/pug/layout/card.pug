@@ -17,7 +17,7 @@ html(lang='ru')
         .page-header__wrapper.feature-page__header
           a.page-header__logo.feature-page__logo(href= 'index.html')
             svg.page-header__image
-              use(xlink:href='img/sprite_auto.svg#logo')
+              use(xlink:href='img/sprite_auto.svg#logo-main')
           .menu-overlay
             include ../section/menu.pug
           button.feature-page__menu-btn.page-header__btn.page-header__btn--open Меню
@@ -46,5 +46,3 @@ html(lang='ru')
                 use(xlink:href='img/sprite_auto.svg#icon-insta')
     include ../section/footer.pug
     include ../section/contact-form.pug
-    script(src='js/vendor.min.js', defer)
-    script(src='js/main.min.js', defer)

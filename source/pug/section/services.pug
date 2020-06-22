@@ -2,7 +2,7 @@ include ../utils/mixins.pug
 
 - var servicesArr = [{link: "wedding.html", img: "feature-1", text: "букет невесты и свадебное оформление", number: "01", mod: "bride"}, {link: "events.html", img: "feature-2", text: "букеты на торжества", number: "02", mod: "celebration"}, {link: "compositions.html", img: "feature-3", text: "композиции", number: "03", mod: "compositions"}, {link: "decoration.html", img: "feature-4", text: "оформление мероприятий", number: "04", mod: "decor"}]
 
-section.services#services
+section.services(id='services')
   .services-wrapper
     span.services__bg-title Каталог услуг
     .services__list.swiper-container.swiper1
