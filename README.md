@@ -16,6 +16,7 @@ floristry
 │   ├── css
 │   ├── fonts
 │   ├── img
+│   ├── pug
 │   ├── js
 │   ├── sass
 │   ├── gulp
@@ -28,6 +29,7 @@ floristry
 ├── package.json
 ├── README.md
 ├── gulpfile.js
+├── webpack.config.js
 ├── .browserslistrc
 ├── .prettierrc
 ├── .prettierignore
@@ -37,11 +39,12 @@ floristry
 ├── .stylelintrc
 ├── .stylelintignore
 └── .gitignore
+└──
 ```
 
 ## Основные команды для работы
 
 - Установка - `npm i`
+- Сборка проекта без запуска локального сервера - `npm run build`
 - Запуск локального сервера - `npm start`
-- Сборка проекта без запуска локального сервера - `npm run-script build`
 - Запуск тестирования на соответствия код-гайдам - `npm test`

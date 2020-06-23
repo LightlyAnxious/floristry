@@ -56,7 +56,7 @@
     "lighthouse": "^6.0.0",
     "posthtml-include": "^1.2.0",
     "pug-lint-config-clock": "^2.0.0",
-    "stylelint": "9.10.x",
+    "stylelint": "^13.6.1",
     "stylelint-config-htmlacademy": "0.1.x",
     "stylelint-scss": "^3.17.2",
     "terser-webpack-plugin": "^3.0.6",
