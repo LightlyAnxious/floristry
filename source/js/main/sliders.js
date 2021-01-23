@@ -1,6 +1,8 @@
 import Swiper from 'swiper';
-import { modalOverlay } from './nav.js';
+import { modalOverlay, openModal, closeModal } from './nav.js';
 import { breakpointChecker, manageControls } from './utils';
+import { ScreenSize } from '../const';
+import yall from 'yall-js';
 
 const desktop = window.matchMedia('(min-width: 1140px)');
 const servicesList = document.querySelector('.services__list');
@@ -236,7 +238,7 @@ if (modal && galleryImages && modalSlider) {
       galleryItem.classList.add('modal-slider__item');
       galleryItem.classList.add('swiper-slide');
 
-      if (viewPort > TABLET) {
+      if (viewPort > ScreenSize.TABLET) {
         srcSet = `img/gallery/tablet/gallery-img-${index}--tablet.webp 1x, img/gallery/tablet/gallery-img-${index}--tablet@2x.webp 2x`;
 
         src = `img/gallery/tablet/gallery-img-${index}--tablet.jpg`;

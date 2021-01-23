@@ -93,4 +93,4 @@ if (callButton && modal && modalClose && modalOverlay) {
   });
 }
 
-export { modalOverlay, closeModal };
+export { modalOverlay, closeModal, openModal };

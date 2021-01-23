@@ -42,7 +42,7 @@ module.exports = {
     main: ['./source/js/main.js']
   },
   output: {
-    filename: '[name].min.js',
+    filename: '[name].[contenthash].min.js',
     path: path.resolve(__dirname, 'build/js')
   },
   optimization: {
